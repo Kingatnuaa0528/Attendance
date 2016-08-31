@@ -11,6 +11,9 @@ public class AttendDO {
 
     private Date attendTime;
 
+    //1: come  2:leave
+    private int type;
+
     public String getUsername() {
         return username;
     }
@@ -25,5 +28,13 @@ public class AttendDO {
 
     public void setAttendTime(Date attendTime) {
         this.attendTime = attendTime;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 }
