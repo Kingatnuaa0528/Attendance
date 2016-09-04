@@ -1,6 +1,7 @@
 package com.HG.test.service.attend;
 
 import java.util.Date;
+import java.util.Map;
 
 /**
  * Created by gaohanqing on 16/8/31.
@@ -28,4 +29,24 @@ public interface AttendService {
      * @func : 查询某个同学在一段时间内离开的时间，以每天为单位，如果一天有多次记录，则取最晚的一次
      */
     public Date[] QueryLeaveTime(String username, Date startTime, Date endTime);
+
+    /*
+     * @func : 查询所有同学在一段时间内出勤时间，以每天为单位，如果一天有多次记录，则计算总时长，如果一天没有出勤，则时长为0
+     * @return : <username, duration>
+     */
+    public Map<String, Long> QueryAllDuration(Date startTime, Date endTime);
+
+    /*
+     * @func : 查询所有同学在某一天到达的时间，如果一天有多次记录，则取最早的一次，如果一天没有出勤，则时间为null
+     * @return : <username, ArriveTime>
+     * @param : time的格式：YYYY-MM-DD HH-MM-SS，只取到日期即可
+     */
+    public Map<String, Date> QueryAllComeTime(Date time);
+
+    /*
+     * @func : 查询所有同学在某一天离开的时间，如果一天有多次记录，则取最晚的一次，如果一天没有出勤，则时间为null
+     * @return : <username, LeaveTime>
+     * @param : time的格式：YYYY-MM-DD HH-MM-SS，只取到日期即可
+     */
+    public Map<String, Date> QueryAllLeaveTime(Date time);
 }

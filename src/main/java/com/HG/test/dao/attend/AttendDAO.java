@@ -14,5 +14,5 @@ public interface AttendDAO {
 
     public List<AttendDO> select_byTime(Date startTime, Date endTime);
 
-    public List<AttendDO> select_byUser(String username);
+    public List<AttendDO> select_byUser(String username, Date startTime, Date endTime);
 }
