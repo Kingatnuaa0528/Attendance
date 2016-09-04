@@ -1,6 +1,7 @@
 package com.HG.test.test.dao;
 
 import com.HG.test.dao.login.LoginDAO;
+import com.HG.test.pojo.LoginDO;
 import junit.framework.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,5 +24,19 @@ public class LoginDAOTest {
     public void IOCTest()
     {
         Assert.assertNotNull(loginDAO);
+    }
+
+    @Test
+    public void insertTest(){
+        LoginDO user = new LoginDO();
+        user.setUsername("Huajie");
+        user.setPassword("123456");
+        loginDAO.insert_user(user);
+    }
+
+    @Test
+    public void selectTest(){
+
+        Assert.assertEquals("123456",loginDAO.select_user("Huajie").getPassword());
     }
 }

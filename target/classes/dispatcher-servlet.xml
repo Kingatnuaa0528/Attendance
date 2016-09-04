@@ -19,7 +19,7 @@
     <bean id="viewResolverCommon" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="contentType" value="text/html; charset=utf-8"/>
         <property name="prefix" value="/view/"/>
-        <property name="suffix" value=".jsp"/><!--可为空,方便实现自已的依据扩展名来选择视图解释类的逻辑  -->
+        <property name="suffix" value=".jsp"/>
         <property name="order" value="1"/>
     </bean>
 
