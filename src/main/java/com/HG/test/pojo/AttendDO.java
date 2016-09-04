@@ -14,8 +14,6 @@ public class AttendDO {
     //1: come  2:leave
     private int type;
 
-    private int unused;
-
     public String getUsername() {
         return username;
     }

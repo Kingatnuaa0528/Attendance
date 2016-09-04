@@ -88,8 +88,8 @@
       <file leaf-file-name="AttendDO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/pojo/AttendDO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57505286" vertical-offset="0" max-vertical-offset="612">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.57505286" vertical-offset="0" max-vertical-offset="578">
+              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -998,12 +998,12 @@
       <workItem from="1472698584066" duration="3154000" />
       <workItem from="1472816313178" duration="2144000" />
       <workItem from="1472884507885" duration="385000" />
-      <workItem from="1472963272970" duration="9694000" />
+      <workItem from="1472963272970" duration="9773000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23814000" />
+    <option name="totallyTimeSpent" value="23893000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -1396,8 +1396,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/pojo/AttendDO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57505286" vertical-offset="0" max-vertical-offset="612">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.57505286" vertical-offset="0" max-vertical-offset="578">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding />
         </state>
       </provider>
