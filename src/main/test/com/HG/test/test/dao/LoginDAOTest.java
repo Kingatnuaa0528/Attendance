@@ -5,6 +5,7 @@ import com.HG.test.pojo.LoginDO;
 import junit.framework.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -39,4 +40,20 @@ public class LoginDAOTest {
 
         Assert.assertEquals("123456",loginDAO.select_user("Huajie").getPassword());
     }
+
+    @Test
+    public void updateTest(){
+        boolean flag = loginDAO.update_user("Huajie", "123456", "000000");
+        System.out.println(flag);
+        flag = loginDAO.update_user("Huajie", "123456", "000000");
+        System.out.println(flag);
+    }
+
+    @Test
+    public void deleteTest(){
+        boolean flag = loginDAO.delete_user("Huajie");
+        System.out.println(flag);
+    }
+
+
 }

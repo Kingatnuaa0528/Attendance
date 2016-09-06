@@ -30,7 +30,7 @@ public class AttendDAOTest {
         attendDO.setUsername("Huajie");
         System.out.println(new Date(System.currentTimeMillis()));
         attendDO.setAttendTime(new Date());
-        attendDO.setType(1);
+        attendDO.setType(0);
 
         attendDAO.insert_attend(attendDO);
     }

@@ -91,7 +91,63 @@ public class LoginDAOImpl implements LoginDAO {
     }
 
     @Override
-    public void delete_user(String username) {
+    public boolean delete_user(String username) {
+        PreparedStatement ps = null;
 
+        try{
+            init();
+            ps = conn.prepareStatement("DELETE FROM userinf WHERE username = ?;");
+            ps.setString(1, username);
+            ps.executeUpdate();
+            return true;
+        }catch(SQLException e)
+        {
+            e.printStackTrace();
+        }
+        finally {
+            try{
+                if(ps != null) ps.close();
+                if(conn != null) conn.close();
+            }catch (SQLException e)
+            {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean update_user(String username, String old_password, String new_password) {
+        PreparedStatement re = null;
+        PreparedStatement wr = null;
+
+        try{
+            init();
+            re = conn.prepareStatement("SELECT password FROM userinf WHERE  username = ?");
+            re.setString(1,username);
+            ResultSet res = re.executeQuery();
+            res.next();
+            if(res.getString(1).equals(old_password)) {
+                wr = conn.prepareStatement("UPDATE userinf SET password=? WHERE username = ?;");
+                wr.setString(1, new_password);
+                wr.setString(2,username);
+                wr.executeUpdate();
+                return true;
+            }
+        }catch(SQLException e)
+        {
+            e.printStackTrace();
+        }
+        finally {
+            try{
+                if(re != null) re.close();
+                if(wr != null) wr.close();
+                if(conn != null) conn.close();
+            }catch (SQLException e)
+            {
+                e.printStackTrace();
+            }
+        }
+        return false;
     }
 }
