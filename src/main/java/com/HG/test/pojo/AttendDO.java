@@ -11,7 +11,7 @@ public class AttendDO {
 
     private Date attendTime;
 
-    //1: come  2:leave
+    //1: come  0:leave
     private int type;
 
     public String getUsername() {

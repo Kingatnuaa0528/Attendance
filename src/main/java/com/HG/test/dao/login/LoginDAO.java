@@ -11,5 +11,7 @@ public interface LoginDAO {
 
     public LoginDO select_user(String username);
 
-    public void delete_user(String username);
+    public boolean delete_user(String username);
+
+    public boolean update_user(String username, String old_password, String new_password);
 }

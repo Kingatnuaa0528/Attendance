@@ -103,7 +103,7 @@ public class AttendDAOImpl implements AttendDAO {
 
         try{
             init();
-            ps = conn.prepareStatement("SELECT * FROM Attend WHERE username=? AND attendTime BETWEEN ? AND ?;");
+            ps = conn.prepareStatement("SELECT * FROM Attend WHERE username=? AND attendTime BETWEEN ? AND ? ORDER BY attendTime;");
             ps.setString(1,username);
             ps.setTimestamp(2,new java.sql.Timestamp(startTime.getTime()));
             ps.setTimestamp(3,new java.sql.Timestamp(endTime.getTime()));
