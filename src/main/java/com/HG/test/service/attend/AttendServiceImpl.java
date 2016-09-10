@@ -15,13 +15,13 @@ public class AttendServiceImpl implements AttendService {
     @Resource
     private AttendDAO attendDAO;
     @Override
-    public void SubmitAttend(String username, Date dateTime, int LeaveOrCome){
+    public boolean SubmitAttend(String username, Date dateTime, int LeaveOrCome){
 
         AttendDO attendDO = new AttendDO();
         attendDO.setUsername(username);
         attendDO.setAttendTime(dateTime);
         attendDO.setType(LeaveOrCome);
-        attendDAO.insert_attend(attendDO);
+        return(attendDAO.insert_attend(attendDO));
 
     }
 
@@ -82,11 +82,27 @@ public class AttendServiceImpl implements AttendService {
 
     }
     @Override
-    public Long[] QueryDuration(String username, Date startTime, Date endTime) {
+    public Map<Date,Long> QueryDuration(String username, Date startTime, Date endTime) {
 
+        Map<Date,Long> result = new HashMap<Date, Long>();
         List<AttendDO> list = attendDAO.select_byUser(username, startTime, endTime);
-        return CalDuration(list);
-
+        Long[] time = CalDuration(list);
+        int i = 0;
+        int day_record = list.get(0).getAttendTime().getDate();
+        Date date = list.get(0).getAttendTime();
+        int j = 0;
+        while(i<list.size())
+        {
+            if(list.get(i).getAttendTime().getDate() != day_record)
+            {
+                result.put(date,time[j]);
+                day_record = list.get(i).getAttendTime().getDate();
+                date = list.get(i).getAttendTime();
+                j++;
+            }
+            i++;
+        }
+        return result;
     }
 
 

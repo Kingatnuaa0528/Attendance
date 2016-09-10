@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 
 @Controller
-public class LoginControl {
+public class LoginControler {
 
     @Resource
     private LoginService loginService;

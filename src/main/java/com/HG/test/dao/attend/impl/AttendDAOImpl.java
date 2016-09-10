@@ -30,7 +30,7 @@ public class AttendDAOImpl implements AttendDAO {
             e.printStackTrace();
         }
     }
-    public void insert_attend(AttendDO attendDO)
+    public boolean insert_attend(AttendDO attendDO)
     {
         PreparedStatement ps = null;
 
@@ -41,6 +41,7 @@ public class AttendDAOImpl implements AttendDAO {
             ps.setTimestamp(2, new java.sql.Timestamp(attendDO.getAttendTime().getTime()));
             ps.setInt(3,attendDO.getType());
             ps.executeUpdate();
+            return true;
         }catch(SQLException e)
         {
             e.printStackTrace();
@@ -55,7 +56,7 @@ public class AttendDAOImpl implements AttendDAO {
             }
 
         }
-
+        return false;
 
     }
 
