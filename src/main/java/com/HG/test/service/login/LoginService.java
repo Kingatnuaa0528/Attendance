@@ -12,5 +12,5 @@ public interface LoginService {
 
     public boolean ResetPassword(String username, String old_password, String new_password);
 
-    public void InsertNewUser(String username, String password);
+    public boolean InsertNewUser(String username, String password);
 }

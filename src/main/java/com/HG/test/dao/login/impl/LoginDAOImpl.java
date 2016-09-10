@@ -32,7 +32,7 @@ public class LoginDAOImpl implements LoginDAO {
     }
 
     @Override
-    public void insert_user(LoginDO loginDO) {
+    public boolean insert_user(LoginDO loginDO) {
         PreparedStatement ps = null;
 
         try{
@@ -41,6 +41,7 @@ public class LoginDAOImpl implements LoginDAO {
             ps.setString(1, loginDO.getUsername());
             ps.setString(2, loginDO.getPassword());
             ps.executeUpdate();
+            return  true;
         }catch(SQLException e)
         {
             e.printStackTrace();
@@ -55,6 +56,7 @@ public class LoginDAOImpl implements LoginDAO {
             }
 
         }
+        return false;
 
     }
 
@@ -73,6 +75,7 @@ public class LoginDAOImpl implements LoginDAO {
             logindo = new LoginDO();
             logindo.setUsername(res.getString(1));
             logindo.setPassword(res.getString(2));
+
 
         }catch(SQLException e)
         {

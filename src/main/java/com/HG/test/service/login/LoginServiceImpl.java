@@ -35,10 +35,10 @@ public class LoginServiceImpl implements LoginService{
         return (loginDAO.update_user(username, old_password,new_password));
     }
 
-    public void InsertNewUser(String username, String password){
+    public boolean InsertNewUser(String username, String password){
         LoginDO loginDo = new LoginDO();
         loginDo.setUsername(username);
         loginDo.setPassword(password);
-        loginDAO.insert_user(loginDo);
+        return(loginDAO.insert_user(loginDo));
     }
 }
