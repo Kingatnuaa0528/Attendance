@@ -10,9 +10,10 @@ import java.util.List;
  */
 public interface AttendDAO {
 
-    public void insert_attend(AttendDO attendDO);
+    public boolean insert_attend(AttendDO attendDO);
 
     public List<AttendDO> select_byTime(Date startTime, Date endTime);
 
     public List<AttendDO> select_byUser(String username, Date startTime, Date endTime);
+    public List<List<AttendDO>> select_ALLUser(Date startTime, Date endTime);
 }

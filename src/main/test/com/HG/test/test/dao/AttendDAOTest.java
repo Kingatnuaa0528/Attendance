@@ -59,4 +59,21 @@ public class AttendDAOTest {
 
     }
 
+    @Test
+    public void selectALLUserTest()
+    {
+        List<List<AttendDO>> list = attendDAO.select_ALLUser(new Date(116, 8, 4, 0, 0, 0), new Date(116, 8, 7, 0, 0, 0));
+        //System.out.println(list.size());
+        for(int i = 0; i<list.size();i++)
+        {
+            List<AttendDO> ll = list.get(i);
+            //System.out.println(ll.size());
+            for(int j = 0; j<ll.size();j++)
+            {
+                System.out.println(ll.get(j).getUsername() + "  " +ll.get(j).getAttendTime() + "  " +ll.get(j).getType());
+            }
+
+        }
+    }
+
 }

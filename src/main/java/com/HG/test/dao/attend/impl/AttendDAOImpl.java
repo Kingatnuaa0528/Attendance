@@ -30,7 +30,7 @@ public class AttendDAOImpl implements AttendDAO {
             e.printStackTrace();
         }
     }
-    public void insert_attend(AttendDO attendDO)
+    public boolean insert_attend(AttendDO attendDO)
     {
         PreparedStatement ps = null;
 
@@ -41,6 +41,7 @@ public class AttendDAOImpl implements AttendDAO {
             ps.setTimestamp(2, new java.sql.Timestamp(attendDO.getAttendTime().getTime()));
             ps.setInt(3,attendDO.getType());
             ps.executeUpdate();
+            return true;
         }catch(SQLException e)
         {
             e.printStackTrace();
@@ -55,7 +56,7 @@ public class AttendDAOImpl implements AttendDAO {
             }
 
         }
-
+        return false;
 
     }
 
@@ -131,6 +132,58 @@ public class AttendDAOImpl implements AttendDAO {
                 e.printStackTrace();
             }
         }
+        return result;
+    }
+
+
+    @Override
+    public List<List<AttendDO>> select_ALLUser(Date startTime, Date endTime) {
+        List<List<AttendDO>> result = new ArrayList<List<AttendDO>>();
+        List<AttendDO> ans = new ArrayList<AttendDO>();
+        PreparedStatement ps = null;
+
+        try{
+            init();
+            ps = conn.prepareStatement("SELECT * FROM  attend  WHERE attendTime BETWEEN ? AND ?  ORDER BY username,attendTime;");
+            ps.setTimestamp(1,new java.sql.Timestamp(startTime.getTime()));
+            ps.setTimestamp(2,new java.sql.Timestamp(endTime.getTime()));
+            ResultSet res = ps.executeQuery();
+           // System.out.println(res.);
+            res.next();
+            String name_record = res.getString(1);
+            //int i = 0;
+            do
+            {
+                //System.out.println(res.getString(1));
+                if(res.getString(1).equals(name_record)) {
+                        AttendDO attendDO = new AttendDO();
+                        attendDO.setUsername(res.getString(1));
+                        attendDO.setAttendTime(new Date(res.getTimestamp(2).getTime()));
+                        attendDO.setType(res.getInt(3));
+                    //System.out.println("1111:"+res.getString(1) +"  "+ new Date(res.getTimestamp(2).getTime()) +"  "+ res.getInt(3));
+                        ans.add(attendDO);
+                }else{
+                        result.add(ans);
+                        ans = new ArrayList<AttendDO>();
+                        name_record = res.getString(1);
+                    }
+
+            } while(res.next());
+
+        }catch(SQLException e)
+        {
+            e.printStackTrace();
+        }
+        finally {
+            try{
+                if(ps != null) ps.close();
+                if(conn != null) conn.close();
+            }catch (SQLException e)
+            {
+                e.printStackTrace();
+            }
+        }
+        result.add(ans);
         return result;
     }
 

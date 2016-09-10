@@ -7,7 +7,7 @@ import com.HG.test.pojo.LoginDO;
  */
 public interface LoginDAO {
 
-    public void insert_user(LoginDO loginDO);
+    public boolean insert_user(LoginDO loginDO);
 
     public LoginDO select_user(String username);
 
