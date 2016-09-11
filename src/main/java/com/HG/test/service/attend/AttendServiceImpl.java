@@ -81,6 +81,14 @@ public class AttendServiceImpl implements AttendService {
         return res.toArray(new Long[1]);
 
     }
+
+    private Date Datezero(Date date)
+    {
+        date.setHours(0);
+        date.setMinutes(0);
+        date.setSeconds(0);
+        return date;
+    }
     @Override
     public Map<Date,Long> QueryDuration(String username, Date startTime, Date endTime) {
 
@@ -95,13 +103,23 @@ public class AttendServiceImpl implements AttendService {
         {
             if(list.get(i).getAttendTime().getDate() != day_record)
             {
-                result.put(date,time[j]);
+                result.put(Datezero(date),time[j]);
                 day_record = list.get(i).getAttendTime().getDate();
                 date = list.get(i).getAttendTime();
                 j++;
             }
             i++;
         }
+
+        while(startTime.before(endTime))
+        {
+
+            if(!result.containsKey(startTime)) {
+                result.put(new Date(startTime.getTime()), new Long(0));
+            }
+            startTime.setDate(startTime.getDate() + 1);
+        }
+
         return result;
     }
 
@@ -122,7 +140,8 @@ public class AttendServiceImpl implements AttendService {
     }
 
     @Override
-    public Date[] QueryComeTime(String username, Date startTime, Date endTime){
+    public Map<Date,Date> QueryComeTime(String username, Date startTime, Date endTime){
+        Map<Date,Date> result = new HashMap<Date, Date>();
         List<Date> res = new ArrayList<Date>();
         List<AttendDO> list = attendDAO.select_byUser(username, startTime, endTime);
         if(list == null) return null;
@@ -139,14 +158,29 @@ public class AttendServiceImpl implements AttendService {
                 i++;
             }
         }
-        return res.toArray(new Date[1]);
+
+        i=0;
+        while(startTime.before(endTime))
+        {
+            if(startTime.getDate() == res.get(i).getDate()){
+                result.put(new Date(startTime.getTime()), res.get(i));
+                i++;
+                startTime.setDate(startTime.getDate()+1);
+            }
+            else {
+                result.put(new Date(startTime.getTime()), null);
+                startTime.setDate(startTime.getDate()+1);
+            }
+        }
+        return result;
     }
 
     /*
      * @func : 查询某个同学在一段时间内离开的时间，以每天为单位，如果一天有多次记录，则取最晚的一次
      */
     @Override
-    public Date[] QueryLeaveTime(String username, Date startTime, Date endTime){
+    public Map<Date,Date> QueryLeaveTime(String username, Date startTime, Date endTime){
+        Map<Date,Date> result = new HashMap<Date, Date>();
         List<Date> res = new ArrayList<Date>();
         List<AttendDO> list = attendDAO.select_byUser(username, startTime, endTime);
         if(list == null) return null;
@@ -164,7 +198,20 @@ public class AttendServiceImpl implements AttendService {
             }
         }
         res.add(come_list.get(i-1).getAttendTime());
-        return res.toArray(new Date[1]);
+        i=0;
+        while(startTime.before(endTime))
+        {
+            if(startTime.getDate() == res.get(i).getDate()){
+                result.put(new Date(startTime.getTime()), res.get(i));
+                i++;
+                startTime.setDate(startTime.getDate()+1);
+            }
+            else {
+                result.put(new Date(startTime.getTime()), null);
+                startTime.setDate(startTime.getDate()+1);
+            }
+        }
+        return result;
     }
 
 
@@ -172,13 +219,15 @@ public class AttendServiceImpl implements AttendService {
      * @func : 查询所有同学在一段时间内出勤时间，以每天为单位，如果一天有多次记录，则计算总时长，如果一天没有出勤，则时长为0
      * @return : <username, duration>
      */
-    public Map<String, Long[]> QueryAllDuration(Date startTime, Date endTime){
-        Map<String,Long[]> result = new HashMap<String, Long[]>();
+    public Map<String,Map<Date, Long>> QueryAllDuration(Date startTime, Date endTime){
+        Map<String,Map<Date, Long>> result = new HashMap<String, Map<Date, Long>>();
         List<List<AttendDO>> list = attendDAO.select_ALLUser(startTime,endTime);
         for(int i = 0;i<list.size();i++)
         {
             List<AttendDO> ll = list.get(i);
-            result.put(ll.get(0).getUsername(),CalDuration(ll));
+            Map<Date,Long> ans = new HashMap<Date, Long>();
+            ans = QueryDuration(ll.get(0).getUsername(), startTime, endTime);
+            result.put(ll.get(0).getUsername(), ans);
         }
         return result;
     }
@@ -190,26 +239,21 @@ public class AttendServiceImpl implements AttendService {
      * @param : time的格式：YYYY-MM-DD HH-MM-SS，只取到日期即可
      */
     @Override
-    public Map<String, Date[]> QueryAllComeTime(Date startTime, Date endTime){
-        Map<String,Date[]> result = new HashMap<String, Date[]>();
+    public Map<String, Date> QueryAllComeTime(Date startTime, Date endTime){
+        Map<String,Date> result = new HashMap<String, Date>();
         List<List<AttendDO>> list = attendDAO.select_ALLUser(startTime,endTime);
         for(int i = 0;i<list.size();i++)
         {
-            List<Date> res = new ArrayList<Date>();
-            int j = 0;
+            Date res = new Date();
             List<AttendDO> come_list = FindSameType(list.get(i), 1);
-            int day_record = come_list.get(0).getAttendTime().getDate();
-            res.add(come_list.get(0).getAttendTime());
-            while(j<come_list.size())
-            {
-                if(come_list.get(j).getAttendTime().getDate()==day_record) j++;
-                else{
-                    res.add(come_list.get(j).getAttendTime());
-                    day_record = come_list.get(j).getAttendTime().getDate();
-                    j++;
-                }
+            if(come_list.size() == 0) {
+                result.put(list.get(i).get(0).getUsername(), null);
             }
-            result.put(come_list.get(0).getUsername(),res.toArray(new Date[1]));
+             else{
+                res = come_list.get(0).getAttendTime();
+                result.put(come_list.get(0).getUsername(),res);
+            }
+
         }
         return result;
     }
@@ -220,26 +264,21 @@ public class AttendServiceImpl implements AttendService {
      * @param : time的格式：YYYY-MM-DD HH-MM-SS，只取到日期即可
      */
     @Override
-    public Map<String, Date[]> QueryAllLeaveTime(Date startTime, Date endTime){
-        Map<String,Date[]> result = new HashMap<String, Date[]>();
+    public Map<String, Date> QueryAllLeaveTime(Date startTime, Date endTime){
+        Map<String,Date> result = new HashMap<String, Date>();
         List<List<AttendDO>> list = attendDAO.select_ALLUser(startTime,endTime);
         for(int i = 0;i<list.size();i++)
         {
-            List<Date> res = new ArrayList<Date>();
-            int j = 0;
-            List<AttendDO> come_list = FindSameType(list.get(i), 1);
-            int day_record = come_list.get(0).getAttendTime().getDate();
-           // res.add(come_list.get(0).getAttendTime());
-            while(j<come_list.size())
-            {
-                if(come_list.get(j).getAttendTime().getDate()==day_record) j++;
-                else{
-                    res.add(come_list.get(j-1).getAttendTime());
-                    day_record = come_list.get(j).getAttendTime().getDate();
-                    j++;
-                }
+            Date res = new Date();
+            List<AttendDO> leave_list = FindSameType(list.get(i), 0);
+            if(leave_list.size() == 0) {
+                result.put(list.get(i).get(0).getUsername(), null);
             }
-            result.put(come_list.get(0).getUsername(),res.toArray(new Date[1]));
+            else{
+                res = leave_list.get(leave_list.size()-1).getAttendTime();
+                result.put(leave_list.get(0).getUsername(),res);
+            }
+
         }
         return result;
     }
