@@ -21,7 +21,7 @@ public class LoginControler {
     private LoginService loginService;
     //登陆操作
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public ModelAndView Login(HttpServletRequest request, HttpServletResponse response){
+    public String Login(HttpServletRequest request, HttpServletResponse response){
 
         ModelAndView mv = new ModelAndView();
         String username = (String)request.getAttribute("username");
@@ -29,33 +29,31 @@ public class LoginControler {
         String IP = request.getRemoteAddr();
         if(loginService.CheckLogin(username, password, IP)){
             mv.addObject("message",username);
-            mv.setViewName("functionseletion");
+            return "functionseletion";
         }
         else{
             mv.addObject("message","Login Error!!!");
-            mv.setViewName("information");
+            return "information";
         }
-        return mv;
     }
     @RequestMapping(value = "/register",method = RequestMethod.POST)
-    public ModelAndView register(HttpServletRequest request, HttpServletResponse response){
+    public String register(HttpServletRequest request, HttpServletResponse response){
 
         ModelAndView mv = new ModelAndView();
         String username = (String)request.getAttribute("username");
         String password = (String)request.getAttribute("password");
         if(loginService.InsertNewUser(username, password)){
             mv.addObject("message","Hello"+username);
-            mv.setViewName("functionseletion");
+            return "functionseletion";
         }
         else{
             mv.addObject("message","Register Error!!!");
-            mv.setViewName("information");
+           return "information";
         }
-        return mv;
     }
 
     @RequestMapping(value = "/resetPassword",method = RequestMethod.POST)
-    public ModelAndView resetPassword(HttpServletRequest request, HttpServletResponse response){
+    public String resetPassword(HttpServletRequest request, HttpServletResponse response){
 
         ModelAndView mv = new ModelAndView();
         String username = (String)request.getAttribute("username");
@@ -63,13 +61,11 @@ public class LoginControler {
         String new_password = (String)request.getAttribute("new_password");
         if(loginService.ResetPassword(username, old_password, new_password)){
             mv.addObject("message","Reset Success!!");
-            mv.setViewName("information");
         }
         else{
             mv.addObject("message","Register Error!!!");
-            mv.setViewName("information");
         }
-        return mv;
+        return "information";
     }
 
 }

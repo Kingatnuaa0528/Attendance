@@ -8,6 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.Map;
 
 /**
  * Created by HuaJieJie on 2016/9/6.
@@ -19,25 +20,49 @@ public class AttendServiceTest {
     private AttendService attendService;
     @Test
     public void QueryDurationTest(){
-        Long[] time = attendService.QueryDuration("Huajie", new Date(116, 8, 6, 0, 0, 0), new Date(116, 8, 8, 0, 0, 0));
-        //System.out.println(time.length);
-        for(int i=0;i<time.length;i++)
-            System.out.println(time[i]);
+        Map<Date,Long> map = attendService.QueryDuration("Huajie", new Date(116, 8, 6, 0, 0, 0), new Date(116, 8, 8, 0, 0, 0));
+
+        Date[] key = map.keySet().toArray(new Date[1]);
+        for(int i = 0;i<key.length;i++)
+        {
+            System.out.println(key[i].toString() +":   "+ map.get(key[i]));
+        }
     }
 
     @Test
     public void QueryComeTimeTest(){
-        Date[] come_time = attendService.QueryComeTime("Huajie", new Date(116, 8, 4, 0, 0, 0), new Date(116, 8, 7, 0, 0, 0));
-        System.out.println(come_time.length);
+        Map<Date,Date> come_time = attendService.QueryComeTime("Huajie", new Date(116, 8, 4, 0, 0, 0), new Date(116, 8, 7, 0, 0, 0));
+        /*System.out.println(come_time.length);
         for(int i=0;i<come_time.length;i++)
-            System.out.println(come_time[i]);
+            System.out.println(come_time[i]);*/
     }
 
     @Test
     public void QueryLeaveTimeTest(){
-        Date[] come_time = attendService.QueryLeaveTime("Huajie", new Date(116, 8, 4, 0, 0, 0), new Date(116, 8, 7, 0, 0, 0));
-        System.out.println(come_time.length);
+        Map<Date,Date> come_time = attendService.QueryLeaveTime("Huajie", new Date(116, 8, 4, 0, 0, 0), new Date(116, 8, 7, 0, 0, 0));
+        /*System.out.println(come_time.length);
         for(int i=0;i<come_time.length;i++)
-            System.out.println(come_time[i]);
+            System.out.println(come_time[i]);*/
+    }
+
+
+    @Test
+     public void QueryAllLeaveTimeTest(){
+        Map<String, Date> map = attendService.QueryAllLeaveTime(new Date(116, 8, 6, 0, 0, 0), new Date(116, 8, 7, 0, 0, 0));
+        String[] key = map.keySet().toArray(new String [1]);
+        for(int i = 0;i<key.length;i++)
+        {
+            System.out.println(key[i] +":   "+ map.get(key[i]));
+        }
+    }
+
+    @Test
+    public void QueryAllComeTimeTest(){
+        Map<String, Date> map = attendService.QueryAllComeTime(new Date(116, 8, 6, 0, 0, 0), new Date(116, 8, 7, 0, 0, 0));
+        String[] key = map.keySet().toArray(new String [1]);
+        for(int i = 0;i<key.length;i++)
+        {
+            System.out.println(key[i] +":   "+ map.get(key[i]));
+        }
     }
 }
