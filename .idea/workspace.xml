@@ -31,8 +31,13 @@
       <file leaf-file-name="AttendService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/service/attend/AttendService.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.0" vertical-offset="472" max-vertical-offset="1083">
               <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+=======
+            <state vertical-scroll-proportion="0.49588138" vertical-offset="1229" max-vertical-offset="1938">
+              <caret line="90" column="61" selection-start-line="90" selection-start-column="61" selection-end-line="90" selection-end-column="61" />
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
               <folding>
                 <element signature="imports" expanded="false" />
               </folding>
@@ -65,8 +70,13 @@
       <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/views/login/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="-1.7142857" vertical-offset="408" max-vertical-offset="874">
               <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+=======
+            <state vertical-scroll-proportion="0.0" vertical-offset="362" max-vertical-offset="969">
+              <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
               <folding />
             </state>
           </provider>
@@ -75,9 +85,24 @@
       <file leaf-file-name="SingleUser.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/views/attend/SingleUser.jsp">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="-6.107143" vertical-offset="342" max-vertical-offset="912">
               <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
               <folding />
+=======
+            <state vertical-scroll-proportion="0.0" vertical-offset="4357" max-vertical-offset="4964">
+              <caret line="267" column="5" selection-start-line="267" selection-start-column="5" selection-end-line="267" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3419#3431#0" expanded="true" />
+                <element signature="e#4855#4867#0" expanded="true" />
+                <element signature="e#6399#6411#0" expanded="true" />
+                <element signature="e#8059#8084#0" expanded="true" />
+                <element signature="e#8309#8321#0" expanded="true" />
+                <element signature="e#8832#8855#0" expanded="true" />
+                <element signature="e#9496#9519#0" expanded="true" />
+              </folding>
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
             </state>
           </provider>
         </entry>
@@ -118,8 +143,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/HG/test/action/LoginControl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/HG/test/dao/attend/AttendDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/HG/test/dao/attend/impl/AttendDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HG/test/service/attend/AttendService.java" />
         <option value="$PROJECT_DIR$/src/main/test/com/HG/test/test/dao/AttendServiceTest.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/com/HG/test/service/attend/AttendServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
@@ -131,6 +156,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/HG/test/action/LoginControler.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/attend/SingleUser.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/HG/test/pojo/ResultType.java" />
+=======
+        <option value="$PROJECT_DIR$/src/main/java/com/HG/test/action/LoginControler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/HG/test/service/attend/AttendService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/HG/test/service/attend/AttendServiceImpl.java" />
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
         <option value="$PROJECT_DIR$/src/main/java/com/HG/test/action/AttendControler.java" />
       </list>
     </option>
@@ -170,10 +200,17 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
     <option name="x" value="27" />
     <option name="y" value="39" />
     <option name="width" value="1349" />
     <option name="height" value="792" />
+=======
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -200,7 +237,10 @@
       <sortByType />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
+=======
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -284,6 +324,7 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+<<<<<<< HEAD
             <PATH_ELEMENT>
               <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -344,6 +385,8 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+=======
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -363,6 +406,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -436,6 +480,9 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pojo" />
+=======
+              <option name="myItemId" value="resources" />
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -498,6 +545,10 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+<<<<<<< HEAD
+=======
+      <pane id="PackagesPane" />
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1043,18 +1094,32 @@
       <workItem from="1472963272970" duration="9854000" />
       <workItem from="1473070011496" duration="33176000" />
       <workItem from="1473330348090" duration="3272000" />
+<<<<<<< HEAD
       <workItem from="1473504770128" duration="16142000" />
       <workItem from="1473573566614" duration="5820000" />
       <workItem from="1473726433589" duration="11248000" />
+=======
+      <workItem from="1473504770128" duration="16638000" />
+      <workItem from="1473597057167" duration="105000" />
+      <workItem from="1473764994018" duration="1687000" />
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="93632000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="27" y="39" width="1349" height="792" extended-state="0" />
     <editor active="false" />
+=======
+    <option name="totallyTimeSpent" value="78852000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1062,8 +1127,15 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39937106" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1072,10 +1144,17 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12893082" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3220859" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24743778" sideWeight="0.49842766" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976282" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1121,6 +1200,21 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976282" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
+=======
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24963397" sideWeight="0.5015723" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39937106" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32232705" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3301887" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1156,6 +1250,45 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/test/com/HG/test/test/dao/AttendDAOTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="696" max-vertical-offset="1156">
+          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/pojo/AttendDO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/pojo/LoginDO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="493">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1246" max-vertical-offset="1853">
+          <caret line="84" column="21" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/dao/login/impl/LoginDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1223" max-vertical-offset="1751">
+          <caret line="89" column="23" selection-start-line="62" selection-start-column="7" selection-end-line="89" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
     <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/service/attend/AttendService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
@@ -1192,7 +1325,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="544">
           <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1232,7 +1364,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="399" max-vertical-offset="608">
           <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1275,7 +1406,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="494" max-vertical-offset="608">
           <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1342,6 +1472,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/resources/dispatcher-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.8571428" vertical-offset="0" max-vertical-offset="544">
@@ -1350,11 +1481,12 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1246" max-vertical-offset="1853">
           <caret line="84" column="21" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1441,6 +1573,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.18891688" vertical-offset="381" max-vertical-offset="3145">
           <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+<<<<<<< HEAD
         </state>
       </provider>
     </entry>
@@ -1498,6 +1631,8 @@
         <state vertical-scroll-proportion="-2.2142856" vertical-offset="185" max-vertical-offset="912">
           <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
           <folding />
+=======
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
         </state>
       </provider>
     </entry>
@@ -1511,6 +1646,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/login/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.7142857" vertical-offset="408" max-vertical-offset="874">
@@ -1523,11 +1659,52 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.107143" vertical-offset="342" max-vertical-offset="912">
           <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/resources/dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14938489" vertical-offset="0" max-vertical-offset="569">
+          <caret line="5" column="62" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10378913" vertical-offset="192" max-vertical-offset="799">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/service/attend/AttendServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4357" max-vertical-offset="4964">
+          <caret line="267" column="5" selection-start-line="267" selection-start-column="5" selection-end-line="267" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3419#3431#0" expanded="true" />
+            <element signature="e#4855#4867#0" expanded="true" />
+            <element signature="e#6399#6411#0" expanded="true" />
+            <element signature="e#8059#8084#0" expanded="true" />
+            <element signature="e#8309#8321#0" expanded="true" />
+            <element signature="e#8832#8855#0" expanded="true" />
+            <element signature="e#9496#9519#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/service/attend/AttendService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="362" max-vertical-offset="969">
+          <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/pojo/ResultType.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/test/com/HG/test/test/dao/AttendServiceTest.java">
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44849786" vertical-offset="0" max-vertical-offset="466">
           <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
@@ -1537,9 +1714,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/action/AttendControler.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="3.2743764" vertical-offset="0" max-vertical-offset="2166">
           <caret line="87" column="40" selection-start-line="87" selection-start-column="40" selection-end-line="92" selection-end-column="5" />
           <folding />
+=======
+        <state vertical-scroll-proportion="0.49588138" vertical-offset="1229" max-vertical-offset="1938">
+          <caret line="90" column="61" selection-start-line="90" selection-start-column="61" selection-end-line="90" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> c98e072df782ba0837f33d294ceb2aa43e9a94ab
         </state>
       </provider>
     </entry>
