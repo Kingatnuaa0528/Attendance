@@ -2,29 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f95d7484-53aa-4415-aa40-dc4e2076a0a7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/HG/test/pojo/ResultType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/views/attend/SingleUser.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/views/login/login.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/views/login/register.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/views/login/reset.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/HG/test/action/AttendControler.class" afterPath="$PROJECT_DIR$/target/classes/com/HG/test/action/AttendControler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/HG/test/dao/attend/AttendDAO.class" afterPath="$PROJECT_DIR$/target/classes/com/HG/test/dao/attend/AttendDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/HG/test/dao/attend/impl/AttendDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/HG/test/dao/attend/impl/AttendDAOImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/HG/test/pojo/AttendDO.class" afterPath="$PROJECT_DIR$/target/classes/com/HG/test/pojo/AttendDO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/HG/test/service/attend/AttendService.class" afterPath="$PROJECT_DIR$/target/classes/com/HG/test/service/attend/AttendService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/HG/test/service/attend/AttendServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/HG/test/service/attend/AttendServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/HG/test/action/LoginControler.class" afterPath="$PROJECT_DIR$/target/classes/com/HG/test/action/LoginControler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/HG/test/dao/login/LoginDAO.class" afterPath="$PROJECT_DIR$/target/classes/com/HG/test/dao/login/LoginDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/HG/test/dao/login/impl/LoginDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/HG/test/dao/login/impl/LoginDAOImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/HG/test/pojo/LoginDO.class" afterPath="$PROJECT_DIR$/target/classes/com/HG/test/pojo/LoginDO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/HG/test/service/login/LoginService.class" afterPath="$PROJECT_DIR$/target/classes/com/HG/test/service/login/LoginService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/HG/test/service/login/LoginServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/HG/test/service/login/LoginServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/HG/test/action/AttendControler.java" afterPath="$PROJECT_DIR$/src/main/java/com/HG/test/action/AttendControler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Attendance.iml" afterPath="$PROJECT_DIR$/Attendance.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Attendance.iws" />
@@ -108,7 +85,7 @@
       <file leaf-file-name="AttendControler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/action/AttendControler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1416309" vertical-offset="1378" max-vertical-offset="2166">
+            <state vertical-scroll-proportion="3.2743764" vertical-offset="0" max-vertical-offset="2166">
               <caret line="87" column="40" selection-start-line="87" selection-start-column="40" selection-end-line="92" selection-end-column="5" />
               <folding />
             </state>
@@ -1068,22 +1045,22 @@
       <workItem from="1473330348090" duration="3272000" />
       <workItem from="1473504770128" duration="16142000" />
       <workItem from="1473573566614" duration="5820000" />
-      <workItem from="1473726433589" duration="10900000" />
+      <workItem from="1473726433589" duration="11248000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93284000" />
+    <option name="totallyTimeSpent" value="93632000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="27" y="39" width="1349" height="792" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1103,7 +1080,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976282" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23718439" sideWeight="0.49842766" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2942857" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2942857" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1560,7 +1537,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/action/AttendControler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1416309" vertical-offset="1378" max-vertical-offset="2166">
+        <state vertical-scroll-proportion="3.2743764" vertical-offset="0" max-vertical-offset="2166">
           <caret line="87" column="40" selection-start-line="87" selection-start-column="40" selection-end-line="92" selection-end-column="5" />
           <folding />
         </state>
