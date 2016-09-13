@@ -25,6 +25,11 @@ public class AttendServiceImpl implements AttendService {
 
     }
 
+    private List<AttendDO> getList(String username, Date startTime, Date endTime)
+    {
+        return attendDAO.select_byUser(username, startTime, endTime);
+    }
+
     /*
      * @func : 查询某个同学在一段时间内的出勤时间，以每天为单位，如果一天有多次考勤，则计算总时长，如果一天没有出勤，则时长为0
      */
@@ -93,7 +98,7 @@ public class AttendServiceImpl implements AttendService {
     public Map<Date,Long> QueryDuration(String username, Date startTime, Date endTime) {
 
         Map<Date,Long> result = new HashMap<Date, Long>();
-        List<AttendDO> list = attendDAO.select_byUser(username, startTime, endTime);
+        List<AttendDO> list = getList(username, startTime, endTime);
         Long[] time = CalDuration(list);
         int i = 0;
         int day_record = list.get(0).getAttendTime().getDate();
@@ -139,11 +144,10 @@ public class AttendServiceImpl implements AttendService {
         return res;
     }
 
-    @Override
-    public Map<Date,Date> QueryComeTime(String username, Date startTime, Date endTime){
+    private Map<Date,Date>FindComeTime(List<AttendDO> list, Date startTime, Date endTime)
+    {
         Map<Date,Date> result = new HashMap<Date, Date>();
         List<Date> res = new ArrayList<Date>();
-        List<AttendDO> list = attendDAO.select_byUser(username, startTime, endTime);
         if(list == null) return null;
         int i = 0;
         List<AttendDO> come_list = FindSameType(list, 1);
@@ -174,15 +178,21 @@ public class AttendServiceImpl implements AttendService {
         }
         return result;
     }
+    @Override
+    public Map<Date,Date> QueryComeTime(String username, Date startTime, Date endTime){
+
+        List<AttendDO> list = getList(username, startTime, endTime);
+        return FindComeTime(list, startTime, endTime);
+
+
+    }
 
     /*
      * @func : 查询某个同学在一段时间内离开的时间，以每天为单位，如果一天有多次记录，则取最晚的一次
      */
-    @Override
-    public Map<Date,Date> QueryLeaveTime(String username, Date startTime, Date endTime){
+    private Map<Date,Date> FindLeaveTime(List<AttendDO> list, Date startTime, Date endTime){
         Map<Date,Date> result = new HashMap<Date, Date>();
         List<Date> res = new ArrayList<Date>();
-        List<AttendDO> list = attendDAO.select_byUser(username, startTime, endTime);
         if(list == null) return null;
         int i = 0;
         List<AttendDO> come_list = FindSameType(list, 0);
@@ -212,6 +222,13 @@ public class AttendServiceImpl implements AttendService {
             }
         }
         return result;
+
+    }
+    @Override
+    public Map<Date,Date> QueryLeaveTime(String username, Date startTime, Date endTime){
+
+        List<AttendDO> list = getList(username, startTime, endTime);
+        return FindLeaveTime(list, startTime, endTime);
     }
 
 
@@ -239,21 +256,13 @@ public class AttendServiceImpl implements AttendService {
      * @param : time的格式：YYYY-MM-DD HH-MM-SS，只取到日期即可
      */
     @Override
-    public Map<String, Date> QueryAllComeTime(Date startTime, Date endTime){
-        Map<String,Date> result = new HashMap<String, Date>();
+    public Map<String,Map<Date, Date>> QueryAllComeTime(Date startTime, Date endTime){
+        Map<String, Map<Date,Date>> result = new HashMap<String,Map<Date,Date>>();
         List<List<AttendDO>> list = attendDAO.select_ALLUser(startTime,endTime);
         for(int i = 0;i<list.size();i++)
         {
-            Date res = new Date();
-            List<AttendDO> come_list = FindSameType(list.get(i), 1);
-            if(come_list.size() == 0) {
-                result.put(list.get(i).get(0).getUsername(), null);
-            }
-             else{
-                res = come_list.get(0).getAttendTime();
-                result.put(come_list.get(0).getUsername(),res);
-            }
-
+            List<AttendDO> ll = list.get(i);
+            result.put(ll.get(0).getUsername(),FindComeTime(ll, startTime, endTime));
         }
         return result;
     }
@@ -264,21 +273,13 @@ public class AttendServiceImpl implements AttendService {
      * @param : time的格式：YYYY-MM-DD HH-MM-SS，只取到日期即可
      */
     @Override
-    public Map<String, Date> QueryAllLeaveTime(Date startTime, Date endTime){
-        Map<String,Date> result = new HashMap<String, Date>();
+    public Map<String,Map<Date, Date>> QueryAllLeaveTime(Date startTime, Date endTime){
+        Map<String, Map<Date,Date>> result = new HashMap<String,Map<Date,Date>>();
         List<List<AttendDO>> list = attendDAO.select_ALLUser(startTime,endTime);
         for(int i = 0;i<list.size();i++)
         {
-            Date res = new Date();
-            List<AttendDO> leave_list = FindSameType(list.get(i), 0);
-            if(leave_list.size() == 0) {
-                result.put(list.get(i).get(0).getUsername(), null);
-            }
-            else{
-                res = leave_list.get(leave_list.size()-1).getAttendTime();
-                result.put(leave_list.get(0).getUsername(),res);
-            }
-
+            List<AttendDO> ll = list.get(i);
+            result.put(ll.get(0).getUsername(),FindLeaveTime(ll, startTime, endTime));
         }
         return result;
     }

@@ -88,9 +88,8 @@ public class AttendControler {
     public String QueryAllComeTime(HttpServletRequest request,HttpServletResponse response){
         ModelAndView mv = new ModelAndView();
         Date startTime = (Date)request.getAttribute("startTime");
-        Date endTime = startTime;
-        endTime.setDate(endTime.getDate() + 1);
-        Map<String,Date> result = attendService.QueryAllComeTime(startTime, endTime);
+        Date endTime = (Date)request.getAttribute("endTime");
+        Map<String,Map<Date,Date>> result = attendService.QueryAllComeTime(startTime, endTime);
         mv.addObject("resultset",result);
         return "result";
     }
@@ -99,9 +98,9 @@ public class AttendControler {
     public String QueryAllLeaveTime(HttpServletRequest request,HttpServletResponse response){
         ModelAndView mv = new ModelAndView();
         Date startTime = (Date)request.getAttribute("startTime");
-        Date endTime = startTime;
-        endTime.setDate(endTime.getDate() + 1);
-        Map<String,Date> result = attendService.QueryAllLeaveTime(startTime,endTime);
+        Date endTime = (Date)request.getAttribute("endTime");
+
+        Map<String,Map<Date,Date>> result = attendService.QueryAllLeaveTime(startTime,endTime);
         mv.addObject("resultset",result);
         return "result";
     }
