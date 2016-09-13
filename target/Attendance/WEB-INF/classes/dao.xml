@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="loginDAO" class="com.HG.test.dao.login.impl.LoginDAOImpl"/>
+    <bean id="attendDAO" class="com.HG.test.dao.attend.impl.AttendDAOImpl"/>
+    <bean id="loginService" class="com.HG.test.service.login.LoginServiceImpl"/>
+    <bean id="attendService" class="com.HG.test.service.attend.AttendServiceImpl"/>
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="org.gjt.mm.mysql.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/Attendance"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="000000"></property>
+        <property name="initialSize" value="5"></property>  <!--初始创建连接的个数-->
+        <property name="maxActive" value="10"></property>   <!--同一时间最多连接的个数-->
+    </bean>
+</beans>

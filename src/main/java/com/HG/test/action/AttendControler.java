@@ -1,5 +1,6 @@
 package com.HG.test.action;
 
+import com.HG.test.pojo.ResultType;
 import com.HG.test.service.attend.AttendService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -48,6 +49,8 @@ public class AttendControler {
         Date startTime = (Date)request.getAttribute("startTime");
         Date endTime = (Date)request.getAttribute("endTime");
         Map<Date,Long> result = attendService.QueryDuration(username, startTime,endTime);
+        mv.addObject("type", ResultType.DURATION);
+        mv.addObject("username", username);
         mv.addObject("resultset",result);
         return "result";
     }
@@ -59,6 +62,8 @@ public class AttendControler {
         Date startTime = (Date)request.getAttribute("startTime");
         Date endTime = (Date)request.getAttribute("endTime");
         Map<Date,Date> result = attendService.QueryComeTime(username, startTime,endTime);
+        mv.addObject("type", ResultType.COMETIME);
+        mv.addObject("username", username);
         mv.addObject("resultset",result);
         return "result";
     }
@@ -70,6 +75,8 @@ public class AttendControler {
         Date startTime = (Date)request.getAttribute("startTime");
         Date endTime = (Date)request.getAttribute("endTime");
         Map<Date,Date> result = attendService.QueryLeaveTime(username, startTime, endTime);
+        mv.addObject("type", ResultType.LEAVETIME);
+        mv.addObject("username", username);
         mv.addObject("resultset",result);
         return "result";
     }
@@ -80,6 +87,7 @@ public class AttendControler {
         Date startTime = (Date)request.getAttribute("startTime");
         Date endTime = (Date)request.getAttribute("endTime");
         Map<String,Map<Date, Long>> result = attendService.QueryAllDuration(startTime,endTime);
+        mv.addObject("type", ResultType.ALLDURATION);
         mv.addObject("resultset",result);
         return "result";
     }
@@ -91,6 +99,7 @@ public class AttendControler {
         Date endTime = startTime;
         endTime.setDate(endTime.getDate() + 1);
         Map<String,Date> result = attendService.QueryAllComeTime(startTime, endTime);
+        mv.addObject("type", ResultType.ALLCOMTIME);
         mv.addObject("resultset",result);
         return "result";
     }
@@ -102,6 +111,7 @@ public class AttendControler {
         Date endTime = startTime;
         endTime.setDate(endTime.getDate() + 1);
         Map<String,Date> result = attendService.QueryAllLeaveTime(startTime,endTime);
+        mv.addObject("type", ResultType.ALLLEAVETIME);
         mv.addObject("resultset",result);
         return "result";
     }
