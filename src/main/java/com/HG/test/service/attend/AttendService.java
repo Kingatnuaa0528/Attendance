@@ -41,12 +41,12 @@ public interface AttendService {
      * @return : <username, ArriveTime>
      * @param : time的格式：YYYY-MM-DD HH-MM-SS，只取到日期即可
      */
-    public Map<String, Date> QueryAllComeTime(Date startTime, Date endTime);
+    public Map<String,Map<Date, Date>> QueryAllComeTime(Date startTime, Date endTime);
 
     /*
      * @func : 查询所有同学在某一天离开的时间，如果一天有多次记录，则取最晚的一次，如果一天没有出勤，则时间为null
      * @return : <username, LeaveTime>
      * @param : time的格式：YYYY-MM-DD HH-MM-SS，只取到日期即可
      */
-    public Map<String, Date> QueryAllLeaveTime(Date startTime, Date endTime);
+    public Map<String,Map<Date, Date>> QueryAllLeaveTime(Date startTime, Date endTime);
 }
