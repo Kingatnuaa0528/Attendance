@@ -237,7 +237,7 @@ public class AttendServiceImpl implements AttendService {
      * @return : <username, duration>
      */
     public Map<Date, Map<String, Long>> QueryAllDuration(Date startTime, Date endTime){
-        Map<String,Map<Date, Long>> result = new HashMap<String, Map<Date, Long>>();
+        //Map<String,Map<Date, Long>> result = new HashMap<String, Map<Date, Long>>();
         Map<Date, Map<String, Long>> result1 = new HashMap<Date, Map<String, Long>>();
         List<List<AttendDO>> list = attendDAO.select_ALLUser(startTime,endTime);
         for(int i = 0;i<list.size();i++)

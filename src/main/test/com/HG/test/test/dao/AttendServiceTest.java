@@ -48,7 +48,7 @@ public class AttendServiceTest {
 
     @Test
      public void QueryAllLeaveTimeTest(){
-        Map<String, Date> map = attendService.QueryAllLeaveTime(new Date(116, 8, 6, 0, 0, 0), new Date(116, 8, 7, 0, 0, 0));
+        Map<Date, Map<String, Date>> map = attendService.QueryAllLeaveTime(new Date(116, 8, 6, 0, 0, 0), new Date(116, 8, 7, 0, 0, 0));
         String[] key = map.keySet().toArray(new String [1]);
         for(int i = 0;i<key.length;i++)
         {
@@ -58,7 +58,7 @@ public class AttendServiceTest {
 
     @Test
     public void QueryAllComeTimeTest(){
-        Map<String, Date> map = attendService.QueryAllComeTime(new Date(116, 8, 6, 0, 0, 0), new Date(116, 8, 7, 0, 0, 0));
+        Map<Date, Map<String, Date>> map = attendService.QueryAllComeTime(new Date(116, 8, 6, 0, 0, 0), new Date(116, 8, 7, 0, 0, 0));
         String[] key = map.keySet().toArray(new String [1]);
         for(int i = 0;i<key.length;i++)
         {

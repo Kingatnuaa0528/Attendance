@@ -86,7 +86,7 @@ public class AttendControler {
         ModelAndView mv = new ModelAndView();
         Date startTime = (Date)request.getAttribute("startTime");
         Date endTime = (Date)request.getAttribute("endTime");
-        Map<String,Map<Date, Long>> result = attendService.QueryAllDuration(startTime,endTime);
+        Map<Date, Map<String, Long>> result = attendService.QueryAllDuration(startTime,endTime);
         mv.addObject("type", ResultType.ALLDURATION);
         mv.addObject("resultset",result);
         return "multi_result";
@@ -97,7 +97,7 @@ public class AttendControler {
         ModelAndView mv = new ModelAndView();
         Date startTime = (Date)request.getAttribute("startTime");
         Date endTime = (Date)request.getAttribute("endTime");
-        Map<String,Map<Date,Date>> result = attendService.QueryAllComeTime(startTime, endTime);
+        Map<Date, Map<String, Date>> result = attendService.QueryAllComeTime(startTime, endTime);
         mv.addObject("resultset",result);
         return "multi_result";
     }
@@ -108,7 +108,7 @@ public class AttendControler {
         Date startTime = (Date)request.getAttribute("startTime");
         Date endTime = (Date)request.getAttribute("endTime");
 
-        Map<String,Map<Date,Date>> result = attendService.QueryAllLeaveTime(startTime,endTime);
+        Map<Date, Map<String, Date>> result = attendService.QueryAllLeaveTime(startTime,endTime);
         mv.addObject("resultset",result);
         return "multi_result";
     }
