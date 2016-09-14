@@ -55,5 +55,9 @@ public class LoginDAOTest {
         System.out.println(flag);
     }
 
-
+    @Test
+    public void test()
+    {
+        System.out.println("Hello World!");
+    }
 }

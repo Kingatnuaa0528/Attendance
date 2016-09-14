@@ -27,6 +27,7 @@ public class LoginDAOImpl implements LoginDAO {
             conn = datasource.getConnection();
         }catch(SQLException e)
         {
+            System.out.println("init ERROR!!!!!");
             e.printStackTrace();
         }
     }
@@ -36,6 +37,7 @@ public class LoginDAOImpl implements LoginDAO {
         PreparedStatement ps = null;
 
         try{
+            System.out.println("aaaaaaaaaaa");
             init();
             ps = conn.prepareStatement("INSERT INTO userinf VALUES(?,?);");
             ps.setString(1, loginDO.getUsername());

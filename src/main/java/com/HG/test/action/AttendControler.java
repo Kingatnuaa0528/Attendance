@@ -89,7 +89,7 @@ public class AttendControler {
         Map<String,Map<Date, Long>> result = attendService.QueryAllDuration(startTime,endTime);
         mv.addObject("type", ResultType.ALLDURATION);
         mv.addObject("resultset",result);
-        return "result";
+        return "multi_result";
     }
 
     @RequestMapping(value = "/QueryAllComeTime", method = RequestMethod.POST)
@@ -99,7 +99,7 @@ public class AttendControler {
         Date endTime = (Date)request.getAttribute("endTime");
         Map<String,Map<Date,Date>> result = attendService.QueryAllComeTime(startTime, endTime);
         mv.addObject("resultset",result);
-        return "result";
+        return "multi_result";
     }
 
     @RequestMapping(value = "/QueryAllLeaveTime", method = RequestMethod.POST)
@@ -110,7 +110,7 @@ public class AttendControler {
 
         Map<String,Map<Date,Date>> result = attendService.QueryAllLeaveTime(startTime,endTime);
         mv.addObject("resultset",result);
-        return "result";
+        return "multi_result";
     }
 
 }
