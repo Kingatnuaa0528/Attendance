@@ -28,7 +28,7 @@ public class AttendDAOTest {
         AttendDO attendDO = new AttendDO();
 
         attendDO.setUsername("Huajie");
-        System.out.println(new Date(System.currentTimeMillis()));
+        //System.out.println(new Date(System.currentTimeMillis()));
         attendDO.setAttendTime(new Date());
         attendDO.setType(0);
 

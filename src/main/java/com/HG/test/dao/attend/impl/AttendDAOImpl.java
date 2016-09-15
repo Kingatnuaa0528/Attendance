@@ -101,6 +101,7 @@ public class AttendDAOImpl implements AttendDAO {
     public List<AttendDO> select_byUser(String username, Date startTime, Date endTime) {
         List<AttendDO> result = new ArrayList<AttendDO>();
         PreparedStatement ps = null;
+        //System.out.println(username + "    " + startTime);
 
         try{
             init();
@@ -109,6 +110,7 @@ public class AttendDAOImpl implements AttendDAO {
             ps.setTimestamp(2,new java.sql.Timestamp(startTime.getTime()));
             ps.setTimestamp(3,new java.sql.Timestamp(endTime.getTime()));
             ResultSet res = ps.executeQuery();
+            //System.out.println(username);
             //res.next();
             while(res.next())
             {
@@ -117,6 +119,7 @@ public class AttendDAOImpl implements AttendDAO {
                 attendDO.setAttendTime(new Date(res.getTimestamp(2).getTime()));
                 attendDO.setType(res.getInt(3));
                 result.add(attendDO);
+                //System.out.println(attendDO.getUsername() + "    " + attendDO.getAttendTime() + "   " + attendDO.getType());
             }
 
         }catch(SQLException e)
@@ -151,10 +154,11 @@ public class AttendDAOImpl implements AttendDAO {
            // System.out.println(res.);
             res.next();
             String name_record = res.getString(1);
+            //System.out.println(name_record);
             //int i = 0;
             do
             {
-                //System.out.println(res.getString(1));
+                //System.out.println("0000" + new Date(res.getTimestamp(2).getTime()));
                 if(res.getString(1).equals(name_record)) {
                         AttendDO attendDO = new AttendDO();
                         attendDO.setUsername(res.getString(1));
@@ -165,6 +169,11 @@ public class AttendDAOImpl implements AttendDAO {
                 }else{
                         result.add(ans);
                         ans = new ArrayList<AttendDO>();
+                        AttendDO attendDO = new AttendDO();
+                        attendDO.setUsername(res.getString(1));
+                        attendDO.setAttendTime(new Date(res.getTimestamp(2).getTime()));
+                        attendDO.setType(res.getInt(3));
+                        ans.add(attendDO);
                         name_record = res.getString(1);
                     }
 

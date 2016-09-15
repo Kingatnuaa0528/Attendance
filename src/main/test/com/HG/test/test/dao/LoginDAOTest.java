@@ -30,8 +30,8 @@ public class LoginDAOTest {
     @Test
     public void insertTest(){
         LoginDO user = new LoginDO();
-        user.setUsername("Huajie");
-        user.setPassword("123456");
+        user.setUsername("Gaohanqing");
+        user.setPassword("910718");
         loginDAO.insert_user(user);
     }
 

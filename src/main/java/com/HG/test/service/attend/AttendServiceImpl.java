@@ -113,16 +113,20 @@ public class AttendServiceImpl implements AttendService {
                 date = list.get(i).getAttendTime();
                 j++;
             }
+            if(i == list.size()-1)
+                result.put(Datezero(date),time[j]);
             i++;
         }
 
-        while(startTime.before(endTime))
+        Date tempTime = new Date(startTime.getTime());
+        while(tempTime.before(endTime))
         {
 
-            if(!result.containsKey(startTime)) {
-                result.put(new Date(startTime.getTime()), new Long(0));
+            if(!result.containsKey(tempTime)) {
+                //System.out.println(startTime);
+                result.put(new Date(tempTime.getTime()), new Long(0));
             }
-            startTime.setDate(startTime.getDate() + 1);
+            tempTime.setDate(tempTime.getDate() + 1);
         }
 
         return result;
@@ -146,11 +150,14 @@ public class AttendServiceImpl implements AttendService {
 
     private Map<Date,Date>FindComeTime(List<AttendDO> list, Date startTime, Date endTime)
     {
+        //System.out.println(list.size());
+        //for(int i = 0; i < list.size(); i++) System.out.println(list.get(i).getAttendTime());
         Map<Date,Date> result = new HashMap<Date, Date>();
         List<Date> res = new ArrayList<Date>();
-        if(list == null) return null;
+        //if(list == null) return null;
         int i = 0;
         List<AttendDO> come_list = FindSameType(list, 1);
+        if(come_list.size() == 0) return null;
         int day_record = come_list.get(0).getAttendTime().getDate();
         res.add(come_list.get(0).getAttendTime());
         while(i<come_list.size())
@@ -162,18 +169,19 @@ public class AttendServiceImpl implements AttendService {
                 i++;
             }
         }
-
+        //System.out.println(list.get(0).getUsername() + "    " + startTime);
         i=0;
-        while(startTime.before(endTime))
+        Date tempTime = new Date(startTime.getTime());
+        while(tempTime.before(endTime))
         {
-            if(startTime.getDate() == res.get(i).getDate()){
-                result.put(new Date(startTime.getTime()), res.get(i));
+            if(tempTime.getDate() == res.get(i).getDate()){
+                result.put(new Date(tempTime.getTime()), res.get(i));
                 i++;
-                startTime.setDate(startTime.getDate()+1);
+                tempTime.setDate(tempTime.getDate()+1);
             }
             else {
-                result.put(new Date(startTime.getTime()), null);
-                startTime.setDate(startTime.getDate()+1);
+                result.put(new Date(tempTime.getTime()), null);
+                startTime.setDate(tempTime.getDate()+1);
             }
         }
         return result;
@@ -208,17 +216,19 @@ public class AttendServiceImpl implements AttendService {
             }
         }
         res.add(come_list.get(i-1).getAttendTime());
+
+        Date tempTime = new Date(startTime.getTime());
         i=0;
-        while(startTime.before(endTime))
+        while(tempTime.before(endTime))
         {
-            if(startTime.getDate() == res.get(i).getDate()){
-                result.put(new Date(startTime.getTime()), res.get(i));
+            if(tempTime.getDate() == res.get(i).getDate()){
+                result.put(new Date(tempTime.getTime()), res.get(i));
                 i++;
-                startTime.setDate(startTime.getDate()+1);
+                tempTime.setDate(tempTime.getDate()+1);
             }
             else {
-                result.put(new Date(startTime.getTime()), null);
-                startTime.setDate(startTime.getDate()+1);
+                result.put(new Date(tempTime.getTime()), null);
+                tempTime.setDate(tempTime.getDate()+1);
             }
         }
         return result;
@@ -238,7 +248,8 @@ public class AttendServiceImpl implements AttendService {
      */
     public Map<Date, Map<String, Long>> QueryAllDuration(Date startTime, Date endTime){
         //Map<String,Map<Date, Long>> result = new HashMap<String, Map<Date, Long>>();
-        Map<Date, Map<String, Long>> result1 = new HashMap<Date, Map<String, Long>>();
+
+        Map<Date, Map<String, Long>> result = new HashMap<Date, Map<String, Long>>();
         List<List<AttendDO>> list = attendDAO.select_ALLUser(startTime,endTime);
         for(int i = 0;i<list.size();i++)
         {
@@ -247,20 +258,20 @@ public class AttendServiceImpl implements AttendService {
             Date[] keySet = ans.keySet().toArray(new Date[1]);
             for(int j = 0; j < keySet.length; j++)
             {
-                if(result1.get(keySet[i]) == null)
+                if(result.get(keySet[i]) == null)
                 {
                     Map<String, Long> temp = new HashMap<String, Long>();
                     temp.put(ll.get(0).getUsername(), ans.get(keySet[i]));
-                    result1.put(keySet[i], temp);
+                    result.put(keySet[i], temp);
                 }
                 else
                 {
-                    Map<String, Long> temp = result1.get(keySet[i]);
+                    Map<String, Long> temp = result.get(keySet[i]);
                     temp.put(ll.get(0).getUsername(), ans.get(keySet[i]));
                 }
             }
         }
-        return result1;
+        return result;
     }
 
 
@@ -276,20 +287,22 @@ public class AttendServiceImpl implements AttendService {
         for(int i = 0;i<list.size();i++)
         {
             List<AttendDO> ll = list.get(i);
+            //System.out.println(ll.get(0).getUsername());
             Map<Date, Date> userAttend = FindComeTime(ll, startTime, endTime);
             Date[] keySet = userAttend.keySet().toArray(new Date[1]);
             for(int j = 0; j < keySet.length; j++)
             {
+                //System.out.println(ll.get(0).getUsername() + "   " + keySet[j]);
                 if(result.get(keySet[j]) == null)
                 {
                     Map<String, Date> temp = new HashMap<String, Date>();
-                    temp.put(ll.get(0).getUsername(), userAttend.get(keySet[i]));
+                    temp.put(ll.get(0).getUsername(), userAttend.get(keySet[j]));
                     result.put(keySet[j], temp);
                 }
                 else
                 {
                     Map<String, Date> temp = result.get(keySet[j]);
-                    temp.put(ll.get(0).getUsername(), userAttend.get(keySet[i]));
+                    temp.put(ll.get(0).getUsername(), userAttend.get(keySet[j]));
                 }
             }
             //result.put(ll.get(0).getUsername(),FindLeaveTime(ll, startTime, endTime));
@@ -317,13 +330,13 @@ public class AttendServiceImpl implements AttendService {
                 if(result.get(keySet[j]) == null)
                 {
                     Map<String, Date> temp = new HashMap<String, Date>();
-                    temp.put(ll.get(0).getUsername(), userAttend.get(keySet[i]));
+                    temp.put(ll.get(0).getUsername(), userAttend.get(keySet[j]));
                     result.put(keySet[j], temp);
                 }
                 else
                 {
                     Map<String, Date> temp = result.get(keySet[j]);
-                    temp.put(ll.get(0).getUsername(), userAttend.get(keySet[i]));
+                    temp.put(ll.get(0).getUsername(), userAttend.get(keySet[j]));
                 }
             }
             //result.put(ll.get(0).getUsername(),FindLeaveTime(ll, startTime, endTime));
