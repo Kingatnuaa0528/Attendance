@@ -2,6 +2,7 @@ package com.HG.test.action;
 
 import com.HG.test.service.login.LoginService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -21,49 +22,47 @@ public class LoginControler {
     private LoginService loginService;
     //登陆操作
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public String Login(HttpServletRequest request, HttpServletResponse response){
+    public String Login(HttpServletRequest request, ModelMap map){
 
-        ModelAndView mv = new ModelAndView();
-        String username = (String)request.getAttribute("username");
-        String password = (String)request.getAttribute("password");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
         String IP = request.getRemoteAddr();
+
         if(loginService.CheckLogin(username, password, IP)){
-            mv.addObject("message",username);
+            map.put("username",username);
             return "functionseletion";
         }
         else{
-            mv.addObject("message","Login Error!!!");
+            map.put("message","Login Error!!!");
             return "information";
         }
     }
     @RequestMapping(value = "/register",method = RequestMethod.POST)
-    public String register(HttpServletRequest request, HttpServletResponse response){
+    public String register(HttpServletRequest request, ModelMap map){
 
-        ModelAndView mv = new ModelAndView();
-        String username = (String)request.getAttribute("username");
-        String password = (String)request.getAttribute("password");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
         if(loginService.InsertNewUser(username, password)){
-            mv.addObject("message","Hello"+username);
+            map.put("username",username);
             return "functionseletion";
         }
         else{
-            mv.addObject("message","Register Error!!!");
+            map.put("message", "Register Error!!!");
            return "information";
         }
     }
 
     @RequestMapping(value = "/resetPassword",method = RequestMethod.POST)
-    public String resetPassword(HttpServletRequest request, HttpServletResponse response){
+    public String resetPassword(HttpServletRequest request, ModelMap map){
 
-        ModelAndView mv = new ModelAndView();
-        String username = (String)request.getAttribute("username");
-        String old_password = (String)request.getAttribute("old_password");
-        String new_password = (String)request.getAttribute("new_password");
+        String username = request.getParameter("username");
+        String old_password = request.getParameter("old_password");
+        String new_password = request.getParameter("new_password");
         if(loginService.ResetPassword(username, old_password, new_password)){
-            mv.addObject("message","Reset Success!!");
+            map.put("message","Reset Success!!");
         }
         else{
-            mv.addObject("message","Register Error!!!");
+            map.put("message","Register Error!!!");
         }
         return "information";
     }

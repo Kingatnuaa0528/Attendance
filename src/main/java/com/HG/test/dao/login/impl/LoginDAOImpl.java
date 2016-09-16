@@ -37,7 +37,7 @@ public class LoginDAOImpl implements LoginDAO {
         PreparedStatement ps = null;
 
         try{
-            System.out.println("aaaaaaaaaaa");
+            //System.out.println("aaaaaaaaaaa");
             init();
             ps = conn.prepareStatement("INSERT INTO userinf VALUES(?,?);");
             ps.setString(1, loginDO.getUsername());
@@ -64,6 +64,7 @@ public class LoginDAOImpl implements LoginDAO {
 
     @Override
     public LoginDO select_user(String username) {
+        System.out.println("aaaaaaaaa : " + username);
         PreparedStatement ps = null;
         LoginDO logindo = null;
 
@@ -72,13 +73,16 @@ public class LoginDAOImpl implements LoginDAO {
             ps = conn.prepareStatement("SELECT * FROM userinf WHERE username = ?;");
             ps.setString(1, username);
             ResultSet res = ps.executeQuery();
-            res.next();
-            //System.out.println(res.);
-            logindo = new LoginDO();
-            logindo.setUsername(res.getString(1));
-            logindo.setPassword(res.getString(2));
-
-
+            if(res.next()) {
+                logindo = new LoginDO();
+                logindo.setUsername(res.getString(1));
+                logindo.setPassword(res.getString(2));
+                return logindo;
+            }
+            else
+            {
+                System.out.println("Null Exception!!!");
+            }
         }catch(SQLException e)
         {
             e.printStackTrace();
@@ -92,7 +96,7 @@ public class LoginDAOImpl implements LoginDAO {
                 e.printStackTrace();
             }
         }
-        return logindo;
+        return null;
     }
 
     @Override

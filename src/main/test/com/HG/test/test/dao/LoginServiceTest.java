@@ -23,11 +23,11 @@ public class LoginServiceTest {
     @Test
     public void CheckLoginTest(){
 
-        boolean flag = loginService.CheckLogin("Huajie", "123456", "192.168.0.2");
+        boolean flag = loginService.CheckLogin("Huajie", "123456", "127.0.0.2");
         Assert.assertEquals(true,flag);
         flag = loginService.CheckLogin("Huajie", "123456", "192.138.0.2");
         Assert.assertEquals(false,flag);
-        flag = loginService.CheckLogin("Huajie", "123456", "192.168.0.435");
+        flag = loginService.CheckLogin("Huaji", "123456", "192.168.0.435");
         Assert.assertEquals(false,flag);
 
     }

@@ -11,7 +11,7 @@
         <property name="driverClassName" value="org.gjt.mm.mysql.Driver"></property>
         <property name="url" value="jdbc:mysql://localhost:3306/Attendance"></property>
         <property name="username" value="root"></property>
-        <property name="password" value="000000"></property>
+        <property name="password" value="910718"></property>
         <property name="initialSize" value="5"></property>  <!--初始创建连接的个数-->
         <property name="maxActive" value="10"></property>   <!--同一时间最多连接的个数-->
     </bean>
