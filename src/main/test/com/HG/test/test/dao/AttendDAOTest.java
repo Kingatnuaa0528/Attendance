@@ -62,7 +62,7 @@ public class AttendDAOTest {
     @Test
     public void selectALLUserTest()
     {
-        List<List<AttendDO>> list = attendDAO.select_ALLUser(new Date(116, 8, 4, 0, 0, 0), new Date(116, 8, 7, 0, 0, 0));
+        List<List<AttendDO>> list = attendDAO.select_ALLUser(new Date(116, 8, 13, 0, 0, 0), new Date(116, 8, 17, 0, 0, 0));
         //System.out.println(list.size());
         for(int i = 0; i<list.size();i++)
         {

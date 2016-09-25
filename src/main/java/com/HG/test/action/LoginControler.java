@@ -30,7 +30,7 @@ public class LoginControler {
 
         if(loginService.CheckLogin(username, password, IP)){
             map.put("username",username);
-            return "functionseletion";
+            return "functionselection";
         }
         else{
             map.put("message","Login Error!!!");
@@ -44,7 +44,7 @@ public class LoginControler {
         String password = request.getParameter("password");
         if(loginService.InsertNewUser(username, password)){
             map.put("username",username);
-            return "functionseletion";
+            return "functionselection";
         }
         else{
             map.put("message", "Register Error!!!");

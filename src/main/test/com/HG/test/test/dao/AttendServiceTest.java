@@ -1,6 +1,7 @@
 package com.HG.test.test.dao;
 
 import com.HG.test.service.attend.AttendService;
+import com.alibaba.fastjson.JSONObject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -63,8 +64,9 @@ public class AttendServiceTest {
 
     @Test
     public void QueryAllComeTimeTest(){
-        Map<Date, Map<String, Date>> map = attendService.QueryAllComeTime(new Date(116, 8, 14, 0, 0, 0), new Date(116, 8, 16, 0, 0, 0));
+        Map<Date, Map<String, Date>> map = attendService.QueryAllComeTime(new Date(116, 8, 13, 0, 0, 0), new Date(116, 8, 17, 0, 0, 0));
         Date[] key = map.keySet().toArray(new Date[1]);
+        System.out.println("length :  " + key.length);
         for(int i = 0; i < key.length; i++)
         {
             Map<String, Date> value = map.get(key[i]);
@@ -87,5 +89,6 @@ public class AttendServiceTest {
             for(int j = 0; j < user_keySet.length; j++)
                 System.out.println(key[i] +":   "+ user_keySet[j] + "  " + value.get(user_keySet[j]));
         }
+        //System.out.println(JSONObject.toJSONString(map));
     }
 }

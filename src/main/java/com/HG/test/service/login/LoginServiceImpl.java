@@ -24,8 +24,6 @@ public class LoginServiceImpl implements LoginService{
         String network_NO = IP.substring(0, IP.lastIndexOf("."));
         if(network_NO.equals(NETWORK_NO) && (host_NO>=MIN_HOST_NO && host_NO <= MAX_HOST_NO))
         {
-            if(loginDAO == null)
-                System.out.println("aaaaaaaaaaaa");
             LoginDO loginDO = loginDAO.select_user(username);
             if(loginDO != null)
                 return (loginDO.getPassword().equals(password));

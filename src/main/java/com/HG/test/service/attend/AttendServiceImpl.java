@@ -3,6 +3,7 @@ package com.HG.test.service.attend;
 import com.HG.test.dao.attend.AttendDAO;
 import com.HG.test.pojo.AttendDO;
 import com.HG.test.service.attend.AttendService;
+import com.alibaba.fastjson.JSONObject;
 
 import javax.annotation.Resource;
 import java.util.*;
@@ -169,19 +170,20 @@ public class AttendServiceImpl implements AttendService {
                 i++;
             }
         }
-        //System.out.println(list.get(0).getUsername() + "    " + startTime);
+        //System.out.println(list.get(0).getUsername() + "    " + res.size());
         i=0;
         Date tempTime = new Date(startTime.getTime());
         while(tempTime.before(endTime))
         {
-            if(tempTime.getDate() == res.get(i).getDate()){
+            //System.out.println(i);
+            if(i < res.size() && tempTime.getDate() == res.get(i).getDate()){
                 result.put(new Date(tempTime.getTime()), res.get(i));
                 i++;
                 tempTime.setDate(tempTime.getDate()+1);
             }
             else {
                 result.put(new Date(tempTime.getTime()), null);
-                startTime.setDate(tempTime.getDate()+1);
+                tempTime.setDate(tempTime.getDate()+1);
             }
         }
         return result;
@@ -221,7 +223,7 @@ public class AttendServiceImpl implements AttendService {
         i=0;
         while(tempTime.before(endTime))
         {
-            if(tempTime.getDate() == res.get(i).getDate()){
+            if(i < res.size() && tempTime.getDate() == res.get(i).getDate()){
                 result.put(new Date(tempTime.getTime()), res.get(i));
                 i++;
                 tempTime.setDate(tempTime.getDate()+1);
@@ -258,18 +260,22 @@ public class AttendServiceImpl implements AttendService {
             Date[] keySet = ans.keySet().toArray(new Date[1]);
             for(int j = 0; j < keySet.length; j++)
             {
-                if(result.get(keySet[i]) == null)
+                //System.out.println("out :   " + keySet[j].getTime() + "  " + ll.get(0).getUsername() + JSONObject.toJSONString(result.keySet()));
+                if(result.get(keySet[j]) == null)
                 {
                     Map<String, Long> temp = new HashMap<String, Long>();
-                    temp.put(ll.get(0).getUsername(), ans.get(keySet[i]));
-                    result.put(keySet[i], temp);
+                    //System.out.println("null :   " + keySet[j].getTime() + "  " +ll.get(0).getUsername()+ "  " + JSONObject.toJSONString(result.keySet()));
+                    temp.put(ll.get(0).getUsername(), ans.get(keySet[j]));
+                    result.put(keySet[j], temp);
                 }
                 else
                 {
-                    Map<String, Long> temp = result.get(keySet[i]);
-                    temp.put(ll.get(0).getUsername(), ans.get(keySet[i]));
+                    Map<String, Long> temp = result.get(keySet[j]);
+                    //System.out.println("else :   " + keySet[j].getTime() + "  "  +ll.get(0).getUsername()+ "  " + JSONObject.toJSONString(result.keySet()));
+                    temp.put(ll.get(0).getUsername(), ans.get(keySet[j]));
                 }
             }
+            //System.out.println(ll.get(0).getUsername());
         }
         return result;
     }
@@ -290,6 +296,7 @@ public class AttendServiceImpl implements AttendService {
             //System.out.println(ll.get(0).getUsername());
             Map<Date, Date> userAttend = FindComeTime(ll, startTime, endTime);
             Date[] keySet = userAttend.keySet().toArray(new Date[1]);
+            //System.out.println("length :  " + keySet.length);
             for(int j = 0; j < keySet.length; j++)
             {
                 //System.out.println(ll.get(0).getUsername() + "   " + keySet[j]);

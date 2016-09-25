@@ -144,7 +144,7 @@ public class AttendDAOImpl implements AttendDAO {
         List<List<AttendDO>> result = new ArrayList<List<AttendDO>>();
         List<AttendDO> ans = new ArrayList<AttendDO>();
         PreparedStatement ps = null;
-
+        //System.out.println(startTime + "   bbbb  " + endTime);
         try{
             init();
             ps = conn.prepareStatement("SELECT * FROM  attend  WHERE attendTime BETWEEN ? AND ?  ORDER BY username,attendTime;");
@@ -152,7 +152,7 @@ public class AttendDAOImpl implements AttendDAO {
             ps.setTimestamp(2,new java.sql.Timestamp(endTime.getTime()));
             ResultSet res = ps.executeQuery();
            // System.out.println(res.);
-            res.next();
+            if(res.next() == false) return null;
             String name_record = res.getString(1);
             //System.out.println(name_record);
             //int i = 0;

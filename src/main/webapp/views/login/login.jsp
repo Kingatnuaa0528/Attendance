@@ -26,7 +26,7 @@
 
     </head>
     <body>
-        <form name="loginForm" action="/login" method="post">
+        <form name="loginForm" action="/login" onsubmit="return validate_login_info(this);" method="post">
             用户名:<br>
             <input type="text" name="username" placeholder="用户名">
             <br>

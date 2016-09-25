@@ -64,9 +64,7 @@ public class LoginDAOImpl implements LoginDAO {
 
     @Override
     public LoginDO select_user(String username) {
-        System.out.println("aaaaaaaaa : " + username);
         PreparedStatement ps = null;
-        LoginDO logindo = null;
 
         try{
             init();
@@ -74,14 +72,10 @@ public class LoginDAOImpl implements LoginDAO {
             ps.setString(1, username);
             ResultSet res = ps.executeQuery();
             if(res.next()) {
-                logindo = new LoginDO();
+                LoginDO logindo = new LoginDO();
                 logindo.setUsername(res.getString(1));
                 logindo.setPassword(res.getString(2));
                 return logindo;
-            }
-            else
-            {
-                System.out.println("Null Exception!!!");
             }
         }catch(SQLException e)
         {
@@ -102,7 +96,6 @@ public class LoginDAOImpl implements LoginDAO {
     @Override
     public boolean delete_user(String username) {
         PreparedStatement ps = null;
-
         try{
             init();
             ps = conn.prepareStatement("DELETE FROM userinf WHERE username = ?;");
