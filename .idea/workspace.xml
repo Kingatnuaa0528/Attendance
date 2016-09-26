@@ -2,46 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f95d7484-53aa-4415-aa40-dc4e2076a0a7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/views/attend/attend.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/highchart_schema.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/views/result/multi_user_result.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/views/attend/query_multi_user.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/views/result/single_user_result.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/Attendance/views/attend/SingleUser.jsp" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/views/attend/SingleUser.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/views/attend/query_single_user.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Attendance/WEB-INF/classes/com/HG/test/action/AttendControler.class" afterPath="$PROJECT_DIR$/target/Attendance/WEB-INF/classes/com/HG/test/action/AttendControler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/HG/test/action/AttendControler.class" afterPath="$PROJECT_DIR$/target/classes/com/HG/test/action/AttendControler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Attendance/WEB-INF/classes/com/HG/test/dao/attend/impl/AttendDAOImpl.class" afterPath="$PROJECT_DIR$/target/Attendance/WEB-INF/classes/com/HG/test/dao/attend/impl/AttendDAOImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/HG/test/dao/attend/impl/AttendDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/HG/test/dao/attend/impl/AttendDAOImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Attendance/WEB-INF/classes/com/HG/test/service/attend/AttendServiceImpl.class" afterPath="$PROJECT_DIR$/target/Attendance/WEB-INF/classes/com/HG/test/service/attend/AttendServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/HG/test/service/attend/AttendServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/HG/test/service/attend/AttendServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/HG/test/test/dao/AttendServiceTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/HG/test/test/dao/AttendServiceTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Attendance/WEB-INF/classes/com/HG/test/action/LoginControler.class" afterPath="$PROJECT_DIR$/target/Attendance/WEB-INF/classes/com/HG/test/action/LoginControler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/HG/test/action/LoginControler.class" afterPath="$PROJECT_DIR$/target/classes/com/HG/test/action/LoginControler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Attendance/WEB-INF/classes/com/HG/test/dao/login/impl/LoginDAOImpl.class" afterPath="$PROJECT_DIR$/target/Attendance/WEB-INF/classes/com/HG/test/dao/login/impl/LoginDAOImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/HG/test/dao/login/impl/LoginDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/HG/test/dao/login/impl/LoginDAOImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Attendance/WEB-INF/classes/com/HG/test/service/login/LoginServiceImpl.class" afterPath="$PROJECT_DIR$/target/Attendance/WEB-INF/classes/com/HG/test/service/login/LoginServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/HG/test/service/login/LoginServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/HG/test/service/login/LoginServiceImpl.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/views/result/multi_user_result_long.jsp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/views/result/multi_user_result.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/views/result/multi_user_result_date.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/HG/test/action/AttendControler.java" afterPath="$PROJECT_DIR$/src/main/java/com/HG/test/action/AttendControler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/HG/test/dao/attend/impl/AttendDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/HG/test/dao/attend/impl/AttendDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/com/HG/test/test/dao/AttendDAOTest.java" afterPath="$PROJECT_DIR$/src/main/test/com/HG/test/test/dao/AttendDAOTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/HG/test/service/attend/AttendServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/HG/test/service/attend/AttendServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/com/HG/test/test/dao/AttendServiceTest.java" afterPath="$PROJECT_DIR$/src/main/test/com/HG/test/test/dao/AttendServiceTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Attendance.iml" afterPath="$PROJECT_DIR$/Attendance.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Attendance_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Attendance_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/HG/test/action/LoginControler.java" afterPath="$PROJECT_DIR$/src/main/java/com/HG/test/action/LoginControler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/HG/test/dao/login/impl/LoginDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/HG/test/dao/login/impl/LoginDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/HG/test/service/login/LoginServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/HG/test/service/login/LoginServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/functionselection.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/views/functionselection.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Attendance/views/functionselection.jsp" afterPath="$PROJECT_DIR$/target/Attendance/views/functionselection.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Attendance/views/information.jsp" afterPath="$PROJECT_DIR$/target/Attendance/views/information.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/login/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/views/login/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Attendance/views/login/login.jsp" afterPath="$PROJECT_DIR$/target/Attendance/views/login/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/login/register.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/views/login/register.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Attendance/views/login/register.jsp" afterPath="$PROJECT_DIR$/target/Attendance/views/login/register.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Attendance.iws" />
@@ -71,28 +35,50 @@
       <file leaf-file-name="AttendControler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/action/AttendControler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.259259" vertical-offset="1764" max-vertical-offset="2736">
-              <caret line="123" column="15" selection-start-line="123" selection-start-column="14" selection-end-line="123" selection-end-column="15" />
+            <state vertical-scroll-proportion="-7.851852" vertical-offset="1441" max-vertical-offset="2755">
+              <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
               <folding>
-                <element signature="e#4406#4442#0" expanded="true" />
-                <element signature="e#4494#4848#0" expanded="true" />
-                <element signature="e#4847#4848#0" expanded="true" />
-                <element signature="e#5708#5744#0" expanded="true" />
-                <element signature="e#6149#6150#0" expanded="true" />
-                <element signature="e#6864#6900#0" expanded="true" />
-                <element signature="e#6952#7306#0" expanded="true" />
-                <element signature="e#7305#7306#0" expanded="true" />
+                <element signature="e#4464#4500#0" expanded="true" />
+                <element signature="e#4552#4906#0" expanded="true" />
+                <element signature="e#4905#4906#0" expanded="true" />
+                <element signature="e#5771#5807#0" expanded="true" />
+                <element signature="e#5859#6213#0" expanded="true" />
+                <element signature="e#6212#6213#0" expanded="true" />
+                <element signature="e#7028#7064#0" expanded="true" />
+                <element signature="e#7116#7470#0" expanded="true" />
+                <element signature="e#7469#7470#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AttendServiceImpl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="query_multi_user.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/attend/query_multi_user.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.8928572" vertical-offset="23" max-vertical-offset="741">
+              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="multi_user_result_long.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/result/multi_user_result_long.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.5" vertical-offset="0" max-vertical-offset="1691">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AttendServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/service/attend/AttendServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.5185184" vertical-offset="0" max-vertical-offset="6821">
-              <caret line="5" column="15" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="15" />
+            <state vertical-scroll-proportion="-0.9166667" vertical-offset="6327" max-vertical-offset="6840">
+              <caret line="311" column="22" selection-start-line="311" selection-start-column="22" selection-end-line="311" selection-end-column="22" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#8809#8834#0" expanded="true" />
                 <element signature="e#9508#9522#0" expanded="true" />
                 <element signature="e#10635#10660#0" expanded="true" />
@@ -101,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="multi_user_result.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/result/multi_user_result.jsp">
+      <file leaf-file-name="multi_user_result_date.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/result/multi_user_result_date.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41911766" vertical-offset="1311" max-vertical-offset="2109">
-              <caret line="78" column="16" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
+            <state vertical-scroll-proportion="-6.785714" vertical-offset="228" max-vertical-offset="2071">
+              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -167,10 +153,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/HG/test/service/attend/AttendService.java" />
         <option value="$PROJECT_DIR$/src/main/test/com/HG/test/test/dao/AttendDAOTest.java" />
         <option value="$PROJECT_DIR$/src/main/test/com/HG/test/test/dao/AttendServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HG/test/action/AttendControler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/HG/test/service/attend/AttendServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/HG/test/dao/attend/impl/AttendDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/result/multi_user_result.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/result/multi_user_result_long.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/result/multi_user_result_date.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/HG/test/action/AttendControler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/HG/test/service/attend/AttendServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -199,8 +187,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="87" />
     <option name="y" value="23" />
-    <option name="width" value="1440" />
+    <option name="width" value="1340" />
     <option name="height" value="811" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -625,6 +614,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/views/result" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/views/attend" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -1149,12 +1140,12 @@
       <workItem from="1474176438796" duration="9842000" />
       <workItem from="1474245204589" duration="1107000" />
       <workItem from="1474287008022" duration="23527000" />
-      <workItem from="1474594330359" duration="14297000" />
+      <workItem from="1474594330359" duration="20872000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170013000" />
+    <option name="totallyTimeSpent" value="176588000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1177,33 +1168,33 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="811" extended-state="6" />
+    <frame x="87" y="23" width="1340" height="811" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24942617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39937106" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24963397" sideWeight="0.5015723" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24963397" sideWeight="0.5015723" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12893082" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32127956" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24942617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24942617" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23104435" sideWeight="0.49842766" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33657858" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24884437" sideWeight="0.49842766" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27121" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1246,15 +1237,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/service/attend/AttendService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="535" max-vertical-offset="1083">
-          <caret line="36" column="39" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/result/multi_user_result.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/result/multi_user_result_date.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="1349">
           <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
@@ -1517,13 +1500,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5310559" vertical-offset="0" max-vertical-offset="644">
           <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/attend/query_multi_user.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11801242" vertical-offset="0" max-vertical-offset="741">
-          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1587,35 +1564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/service/attend/AttendServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5185184" vertical-offset="0" max-vertical-offset="6821">
-          <caret line="5" column="15" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="15" />
-          <folding>
-            <element signature="e#8809#8834#0" expanded="true" />
-            <element signature="e#9508#9522#0" expanded="true" />
-            <element signature="e#10635#10660#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/action/AttendControler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.259259" vertical-offset="1764" max-vertical-offset="2736">
-          <caret line="123" column="15" selection-start-line="123" selection-start-column="14" selection-end-line="123" selection-end-column="15" />
-          <folding>
-            <element signature="e#4406#4442#0" expanded="true" />
-            <element signature="e#4494#4848#0" expanded="true" />
-            <element signature="e#4847#4848#0" expanded="true" />
-            <element signature="e#5708#5744#0" expanded="true" />
-            <element signature="e#6149#6150#0" expanded="true" />
-            <element signature="e#6864#6900#0" expanded="true" />
-            <element signature="e#6952#7306#0" expanded="true" />
-            <element signature="e#7305#7306#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/dao/attend/impl/AttendDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.555555" vertical-offset="2429" max-vertical-offset="3686">
@@ -1629,11 +1577,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/result/multi_user_result.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/attend/query_multi_user.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41911766" vertical-offset="1311" max-vertical-offset="2109">
-          <caret line="78" column="16" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
+        <state vertical-scroll-proportion="-1.8928572" vertical-offset="23" max-vertical-offset="741">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/result/multi_user_result_long.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.5" vertical-offset="0" max-vertical-offset="1691">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/result/multi_user_result_date.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.785714" vertical-offset="228" max-vertical-offset="2071">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/action/AttendControler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.851852" vertical-offset="1441" max-vertical-offset="2755">
+          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding>
+            <element signature="e#4464#4500#0" expanded="true" />
+            <element signature="e#4552#4906#0" expanded="true" />
+            <element signature="e#4905#4906#0" expanded="true" />
+            <element signature="e#5771#5807#0" expanded="true" />
+            <element signature="e#5859#6213#0" expanded="true" />
+            <element signature="e#6212#6213#0" expanded="true" />
+            <element signature="e#7028#7064#0" expanded="true" />
+            <element signature="e#7116#7470#0" expanded="true" />
+            <element signature="e#7469#7470#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/HG/test/service/attend/AttendServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.9166667" vertical-offset="6327" max-vertical-offset="6840">
+          <caret line="311" column="22" selection-start-line="311" selection-start-column="22" selection-end-line="311" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8809#8834#0" expanded="true" />
+            <element signature="e#9508#9522#0" expanded="true" />
+            <element signature="e#10635#10660#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

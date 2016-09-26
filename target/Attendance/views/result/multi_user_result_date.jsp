@@ -28,11 +28,7 @@
         var result = new Array();
         var count=0
         for(var key in value){
-            document.write(type);
-            if(type == '<%=ResultType.ALLCOMTIME%>' || type == '<%=ResultType.ALLLEAVETIME%>')
-            result[count++] = new Date(parseInt(value[key])).toLocaleString();
-            else
-                result[count++] = value[key];
+            result[count++] = new Date(parseInt(value[key])).getHours();
         }
         return result;
     }
@@ -46,7 +42,7 @@
     var json_string=eval('(' + data + ')');
     for(var k in json_string) {
         var v = json_string[k].value;
-        if(flag == 0){
+        if(flag == 0 && v.length != 0){
             var xAxis = get_key(v);
             flag = 1;
         }
@@ -56,10 +52,6 @@
 
     switch (type)
     {
-        case '<%=ResultType.ALLDURATION%>':
-            var title = "工作时间统计";
-            var yAxis_title = "时间（s）";
-            break;
         case '<%=ResultType.ALLCOMTIME%>':
             var title = "到达时间统计";
             var yAxis_title = "时刻";
@@ -80,6 +72,12 @@
             categories: xAxis
         },
         yAxis: {
+            tickPositioner: function (){
+                var result = [];
+                for(var i = 0; i < 24; i++)
+                    result.push(i);
+                return result;
+            },
             title: {
                 text: yAxis_title
             },

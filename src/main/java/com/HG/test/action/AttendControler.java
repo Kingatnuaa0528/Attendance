@@ -3,6 +3,7 @@ package com.HG.test.action;
 import com.HG.test.pojo.ResultType;
 import com.HG.test.service.attend.AttendService;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -106,7 +107,7 @@ public class AttendControler {
         //System.out.println(JSONObject.toJSONString(list));
         map.put("type", ResultType.ALLDURATION);
         map.put("result_set",JSONObject.toJSONString(list));
-        return "/result/multi_user_result";
+        return "/result/multi_user_result_long";
     }
 
     @RequestMapping(value = "/QueryAllComeTime", method = RequestMethod.POST)
@@ -126,9 +127,10 @@ public class AttendControler {
                 return o1.getKey().compareTo(o2.getKey());
             }
         });
+        System.out.println(JSONObject.toJSONString(list));
         map.put("type", ResultType.ALLCOMTIME);
-        map.put("result_set",JSONObject.toJSONString(list));
-        return "/result/multi_user_result";
+        map.put("result_set",JSONObject.toJSONString(list, SerializerFeature.WriteMapNullValue));
+        return "/result/multi_user_result_date";
     }
 
     @RequestMapping(value = "/QueryAllLeaveTime", method = RequestMethod.POST)
@@ -148,8 +150,8 @@ public class AttendControler {
             }
         });
         map.put("type", ResultType.ALLLEAVETIME);
-        map.put("result_set",JSONObject.toJSONString(list));
-        return "/result/multi_user_result";
+        map.put("result_set",JSONObject.toJSONString(list, SerializerFeature.WriteMapNullValue));
+        return "/result/multi_user_result_date";
     }
 
 }

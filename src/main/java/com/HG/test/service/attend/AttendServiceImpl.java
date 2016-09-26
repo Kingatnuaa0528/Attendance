@@ -299,16 +299,17 @@ public class AttendServiceImpl implements AttendService {
             //System.out.println("length :  " + keySet.length);
             for(int j = 0; j < keySet.length; j++)
             {
-                //System.out.println(ll.get(0).getUsername() + "   " + keySet[j]);
                 if(result.get(keySet[j]) == null)
                 {
                     Map<String, Date> temp = new HashMap<String, Date>();
+                    //System.out.println("if      " + keySet[j] + "     " + ll.get(0).getUsername() + "   " + userAttend.get(keySet[j]));
                     temp.put(ll.get(0).getUsername(), userAttend.get(keySet[j]));
                     result.put(keySet[j], temp);
                 }
                 else
                 {
                     Map<String, Date> temp = result.get(keySet[j]);
+                    //System.out.println("else    " + keySet[j] + "     " + ll.get(0).getUsername() + "   " + userAttend.get(keySet[j]));
                     temp.put(ll.get(0).getUsername(), userAttend.get(keySet[j]));
                 }
             }
