@@ -51,40 +51,42 @@ public class AttendControler {
     @RequestMapping(value = "/QueryDuration", method = RequestMethod.POST)
     public String QueryDuration(HttpServletRequest request, ModelMap map) throws ParseException{
         String username = request.getParameter("username");
-        SimpleDateFormat sim=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat sim=new SimpleDateFormat("yyyy-MM-dd");
         Date startTime = sim.parse(request.getParameter("startTime"));
         Date endTime = sim.parse(request.getParameter("endTime"));
+        //System.out.println("name :  " + username + " startTime :  " + startTime + " endTime :  " + endTime);
         Map<Date,Long> result = attendService.QueryDuration(username, startTime,endTime);
         map.put("type", ResultType.DURATION);
         map.put("username", username);
-        map.put("resultset",result);
-        return "/result/single_user_result";
+        System.out.println(JSONObject.toJSONString(result));
+        map.put("result_set",JSONObject.toJSONString(result));
+        return "/result/single_user_result_long";
     }
 
     @RequestMapping(value = "/QueryComeTime", method = RequestMethod.POST)
     public String QueryComeTime(HttpServletRequest request, ModelMap map) throws ParseException{
         String username = request.getParameter("username");
-        SimpleDateFormat sim=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat sim=new SimpleDateFormat("yyyy-MM-dd");
         Date startTime = sim.parse(request.getParameter("startTime"));
         Date endTime = sim.parse(request.getParameter("endTime"));
         Map<Date,Date> result = attendService.QueryComeTime(username, startTime,endTime);
         map.put("type", ResultType.COMETIME);
         map.put("username", username);
-        map.put("resultset", result);
-        return "/result/single_user_result";
+        map.put("result_set", JSONObject.toJSONString(result));
+        return "/result/single_user_result_date";
     }
 
     @RequestMapping(value = "/QueryLeaveTime", method = RequestMethod.POST)
     public String QueryLeaveTime(HttpServletRequest request, ModelMap map) throws ParseException{
         String username = request.getParameter("username");
-        SimpleDateFormat sim=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat sim=new SimpleDateFormat("yyyy-MM-dd");
         Date startTime = sim.parse(request.getParameter("startTime"));
         Date endTime = sim.parse(request.getParameter("endTime"));
         Map<Date,Date> result = attendService.QueryLeaveTime(username, startTime, endTime);
         map.put("type", ResultType.LEAVETIME);
         map.put("username", username);
-        map.put("result_set", result);
-        return "/result/single_user_result";
+        map.put("result_set", JSONObject.toJSONString(result));
+        return "/result/single_user_result_date";
     }
 
     @RequestMapping(value = "/QueryAllDuration", method = RequestMethod.POST)

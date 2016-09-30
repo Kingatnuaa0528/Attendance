@@ -10,34 +10,40 @@
     <head>
         <meta charset="utf-8">
         <title>单人结果显示</title>
-        <style>
+        <script>
+            function choose_skip_path(singleQForm)
+            {
+                var type = document.singleQForm.elements['type'].value;
+                singleQForm.method="post";
+                var action_path = "";
+                if(type == "1") action_path="/QueryDuration";
+                else if(type == "2") action_path="/QueryComeTime";
+                else action_path="/QueryLeaveTime";
+
+                singleQForm.action=action_path;
+                return true;
+            }
+        </script>
+        <!--style>
 
             div.pos_right
             {
                 position:relative;
                 left:400px;
             }
-        </style>
+        </style-->
     </head>
     <body>
-        <form id="single_result" action="/QueryDuration" method="post">
-            <table class="table" contenteditable="false">
-                <tr>
-                    <th>用户名</th>
-                    <th>开始时间</th>
-                    <th>结束时间</th>
-                </tr>
-                <tr>
-                    <td><input type="text" id="username"></td>
-                    <td><input type="date" id="starttime"></td>
-                    <td><input type="date" id="endtime"></td>
-                </tr>
-            </table>
+        <form name="singleQForm" onsubmit="return choose_skip_path(this);">
+            用户名：<input type="text" name="username">
+            开始时间：<input type="date" name="startTime">
+            结束时间：<input type="date" name="endTime">
             <br>
-            <hr align="left" width="32%" size=2>
-            <div class="pos_right">
-                <input type="submit" value="查询" >
-            </div>
+            <input type="radio" name="type" value="1" />QueryDuration
+            <input type="radio" name="type" value="2" />QueryComeTime
+            <input type="radio" name="type" value="3" />QueryLeaveTime
+            <br>
+            <input type="submit" value="查询" >
         </form>
     </body>
 </html>
