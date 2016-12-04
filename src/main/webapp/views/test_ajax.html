@@ -1,0 +1,68 @@
+<!--%--
+  Created by IntelliJ IDEA.
+  User: gaohanqing
+  Date: 16/10/11
+  Time: 下午1:21
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %-->
+<html>
+    <head>
+        <title>Test Ajax</title>
+        <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+        <script>
+            $.fn.serializeForm = function()
+            {
+                var o = {};
+                var a = this.serializeArray();
+                $.each(a, function() {
+                    if (o[this.name]) {
+                        if (!o[this.name].push) {
+                            o[this.name] = [o[this.name]];
+                        }
+                        o[this.name].push(this.value || '');
+                    } else {
+                        o[this.name] = this.value || '';
+                    }
+                });
+                return o;
+            };
+
+            function query_multi_ajax()
+            {
+                var json_multiQForm = $('#multiQForm').serializeForm();
+                /*$.post("/test", JSON.stringify(json_multiQForm), function(data,status){
+                    alert("Status: ");
+                });*/
+                $.ajax({
+                    type: "post",
+                    url: "/test",
+                    data:{"mydata":JSON.stringify(json_multiQForm)},
+                    dataType : "json",
+                    success: function(data) {
+                        //alert("success");
+                        var dataObj = eval(data);
+                        alert(dataObj.startTime);
+                    },
+                    error: function(err) {
+                        alert("fail");
+                        //alert(err);
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body>
+    <form name="multiQForm" id="multiQForm">
+        startTime1:
+        <input type="date" name="startTime">
+        endTime:
+        <input type="date" name="endTime" >
+        <!--input type="hidden" id="endTime"-->
+        <input type="radio" name="type" value="1" />QueryAllDuration
+        <input type="radio" name="type" value="2" />QueryAllComeTime
+        <input type="radio" name="type" value="3" />QueryAllLeaveTime
+        <input type="submit" value="查询" onclick="query_multi_ajax();">
+    </form>
+    </body>
+</html>

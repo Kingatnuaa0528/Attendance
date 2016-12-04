@@ -97,7 +97,7 @@ public class AttendServiceImpl implements AttendService {
     }
     @Override
     public Map<Date,Long> QueryDuration(String username, Date startTime, Date endTime) {
-
+        //System.out.println("username :  " + username + "          " + startTime);
         Map<Date,Long> result = new HashMap<Date, Long>();
         List<AttendDO> list = getList(username, startTime, endTime);
         Long[] time = CalDuration(list);

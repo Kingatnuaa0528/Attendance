@@ -1,21 +1,26 @@
 package com.HG.test.action;
 
+import com.HG.test.pojo.FrontData;
+import com.HG.test.pojo.LoginDO;
 import com.HG.test.pojo.ResultType;
 import com.HG.test.service.attend.AttendService;
+import com.HG.test.tool.Tools;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.ServletRequestDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -25,7 +30,7 @@ import java.util.*;
  */
 
 @Controller
-public class AttendControler {
+public class AttendController {
     @Resource
     private AttendService attendService;
 
@@ -59,7 +64,7 @@ public class AttendControler {
         map.put("type", ResultType.DURATION);
         map.put("username", username);
         System.out.println(JSONObject.toJSONString(result));
-        map.put("result_set",JSONObject.toJSONString(result));
+        map.put("result_set", JSONObject.toJSONString(result));
         return "/result/single_user_result_long";
     }
 
@@ -90,10 +95,14 @@ public class AttendControler {
     }
 
     @RequestMapping(value = "/QueryAllDuration", method = RequestMethod.POST)
-    public String QueryAllDuration(HttpServletRequest request, ModelMap map) throws ParseException{
+    public void QueryAllDuration(HttpServletRequest request, HttpServletResponse response) throws ParseException, IOException{
+        String data = Tools.getJsonString(request);
+        JSONObject jsonObject = JSONObject.parseObject(data);
         SimpleDateFormat sim=new SimpleDateFormat("yyyy-MM-dd");
-        Date startTime = sim.parse(request.getParameter("startTime"));
-        Date endTime = sim.parse(request.getParameter("endTime"));
+        Date startTime = sim.parse(jsonObject.getString("startTime"));
+        Date endTime = sim.parse(jsonObject.getString("endTime"));
+
+        System.out.println("startTime :  " + startTime + "  String :  " + jsonObject.getString("startTime"));
 
         Map<Date, Map<String, Long>> result = attendService.QueryAllDuration(startTime,endTime);
         List<Map.Entry<Date, Map<String, Long>>> list = new ArrayList<Map.Entry<Date, Map<String, Long>>>(result.entrySet());
@@ -101,22 +110,28 @@ public class AttendControler {
             //降序排序
             @Override
             public int compare(Map.Entry<Date, Map<String, Long>> o1, Map.Entry<Date, Map<String, Long>> o2) {
-                //return o1.getValue().compareTo(o2.getValue());
                 return o1.getKey().compareTo(o2.getKey());
             }
         });
 
-        //System.out.println(JSONObject.toJSONString(list));
-        map.put("type", ResultType.ALLDURATION);
-        map.put("result_set",JSONObject.toJSONString(list));
-        return "/result/multi_user_result_long";
+        System.out.println(JSONObject.toJSONString(list));
+        System.out.println(data);
+        //map.put("type", ResultType.ALLDURATION);
+        //map.put("result_set",JSONObject.toJSONString(list));
+        response.setContentType("application/json;charset=utf-8");
+        PrintWriter out = response.getWriter();
+
+        out.print(data);
+        out.flush();
+        out.close();
     }
 
     @RequestMapping(value = "/QueryAllComeTime", method = RequestMethod.POST)
-    public String QueryAllComeTime(HttpServletRequest request, ModelMap map) throws ParseException{
-        SimpleDateFormat sim=new SimpleDateFormat("yyyy-MM-dd");
-        Date startTime = sim.parse(request.getParameter("startTime"));
-        Date endTime = sim.parse(request.getParameter("endTime"));
+    public String QueryAllComeTime(HttpServletRequest request, ModelMap map) throws ParseException, IOException{
+        String data = Tools.getJsonString(request);
+        JSONObject jsonObject = JSONObject.parseObject(data);
+        Date startTime = java.sql.Date.valueOf(jsonObject.getString("startTime"));
+        Date endTime = java.sql.Date.valueOf(jsonObject.getString("endTime"));
         //System.out.println(startTime.getTime() + "   aaaa  " + endTime.getTime());
 
         Map<Date, Map<String, Date>> result = attendService.QueryAllComeTime(startTime, endTime);
@@ -132,14 +147,15 @@ public class AttendControler {
         System.out.println(JSONObject.toJSONString(list));
         map.put("type", ResultType.ALLCOMTIME);
         map.put("result_set",JSONObject.toJSONString(list, SerializerFeature.WriteMapNullValue));
-        return "/result/multi_user_result_date";
+        return "/result/multi_user_result";
     }
 
     @RequestMapping(value = "/QueryAllLeaveTime", method = RequestMethod.POST)
-    public String QueryAllLeaveTime(HttpServletRequest request, ModelMap map) throws ParseException{
-        SimpleDateFormat sim=new SimpleDateFormat("YYYY-MM-dd");
-        Date startTime = sim.parse(request.getParameter("startTime"));
-        Date endTime = sim.parse(request.getParameter("endTime"));
+    public String QueryAllLeaveTime(HttpServletRequest request, ModelMap map) throws ParseException, IOException{
+        String data = Tools.getJsonString(request);
+        JSONObject jsonObject = JSONObject.parseObject(data);
+        Date startTime = java.sql.Date.valueOf(jsonObject.getString("startTime"));
+        Date endTime = java.sql.Date.valueOf(jsonObject.getString("endTime"));
 
         Map<Date, Map<String, Date>> result = attendService.QueryAllLeaveTime(startTime,endTime);
         List<Map.Entry<Date, Map<String, Date>>> list = new ArrayList<Map.Entry<Date, Map<String, Date>>>(result.entrySet());
@@ -156,4 +172,32 @@ public class AttendControler {
         return "/result/multi_user_result_date";
     }
 
+    @RequestMapping(value = "/test", method = RequestMethod.POST)
+    public void test(HttpServletRequest request, HttpServletResponse response) throws IOException, ParseException
+    {
+        String data = request.getParameter("mydata");
+        JSONObject object = JSON.parseObject(data);
+        SimpleDateFormat sim=new SimpleDateFormat("yyyy-MM-dd");
+
+        Date startTime = Tools.DateFormat(sim.parse(object.getString("startTime")));
+
+        Date endTime = Tools.DateFormat(sim.parse(object.getString("endTime")));
+
+        Map<Date, Map<String, Long>> result = attendService.QueryAllDuration(startTime,endTime);
+        List<Map.Entry<Date, Map<String, Long>>> list = new ArrayList<Map.Entry<Date, Map<String, Long>>>(result.entrySet());
+        Collections.sort(list, new Comparator<Map.Entry<Date, Map<String, Long>>>() {
+            //降序排序
+            @Override
+            public int compare(Map.Entry<Date, Map<String, Long>> o1, Map.Entry<Date, Map<String, Long>> o2) {
+                return o1.getKey().compareTo(o2.getKey());
+            }
+        });
+
+        System.out.println(data);
+        response.setContentType("application/json;charset=utf-8");
+        PrintWriter writer = response.getWriter();
+        writer.print(data);
+        writer.flush();
+        writer.close();
+    }
 }
