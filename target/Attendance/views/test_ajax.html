@@ -31,22 +31,16 @@
             function query_multi_ajax()
             {
                 var json_multiQForm = $('#multiQForm').serializeForm();
-                /*$.post("/test", JSON.stringify(json_multiQForm), function(data,status){
-                    alert("Status: ");
-                });*/
                 $.ajax({
                     type: "post",
                     url: "/test",
-                    data:{"mydata":JSON.stringify(json_multiQForm)},
+                    data:{"formdata":JSON.stringify(json_multiQForm)},
+                    async: true,
                     dataType : "json",
                     success: function(data) {
-                        //alert("success");
+                        alert(data);
                         var dataObj = eval(data);
-                        alert(dataObj.startTime);
-                    },
-                    error: function(err) {
-                        alert("fail");
-                        //alert(err);
+                        alert(dataObj.data1);
                     }
                 });
             }
@@ -62,7 +56,10 @@
         <input type="radio" name="type" value="1" />QueryAllDuration
         <input type="radio" name="type" value="2" />QueryAllComeTime
         <input type="radio" name="type" value="3" />QueryAllLeaveTime
-        <input type="submit" value="查询" onclick="query_multi_ajax();">
+        <input type="button" value="submit" onclick="query_multi_ajax();"/>
     </form>
+    <ul id="nav2" class="nav">     //存放第二个ul数据
+        <span style="color:red;">this is nav2</span>
+    </ul>
     </body>
 </html>

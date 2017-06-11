@@ -4,11 +4,13 @@ import com.HG.test.pojo.FrontData;
 import com.HG.test.pojo.LoginDO;
 import com.HG.test.pojo.ResultType;
 import com.HG.test.service.attend.AttendService;
+import com.HG.test.tool.ResponseJSONUtil;
 import com.HG.test.tool.Tools;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -31,6 +33,7 @@ import java.util.*;
 
 @Controller
 public class AttendController {
+
     @Resource
     private AttendService attendService;
 
@@ -172,32 +175,34 @@ public class AttendController {
         return "/result/multi_user_result_date";
     }
 
-    @RequestMapping(value = "/test", method = RequestMethod.POST)
-    public void test(HttpServletRequest request, HttpServletResponse response) throws IOException, ParseException
+    @RequestMapping(value = "/test")
+    public void test(@RequestParam String formdata, HttpServletResponse response) throws IOException, ParseException
     {
-        String data = request.getParameter("mydata");
-        JSONObject object = JSON.parseObject(data);
+        JSONObject object = JSON.parseObject(formdata);
         SimpleDateFormat sim=new SimpleDateFormat("yyyy-MM-dd");
 
         Date startTime = Tools.DateFormat(sim.parse(object.getString("startTime")));
+        System.out.println(startTime);
 
         Date endTime = Tools.DateFormat(sim.parse(object.getString("endTime")));
 
-        Map<Date, Map<String, Long>> result = attendService.QueryAllDuration(startTime,endTime);
-        List<Map.Entry<Date, Map<String, Long>>> list = new ArrayList<Map.Entry<Date, Map<String, Long>>>(result.entrySet());
-        Collections.sort(list, new Comparator<Map.Entry<Date, Map<String, Long>>>() {
-            //降序排序
-            @Override
-            public int compare(Map.Entry<Date, Map<String, Long>> o1, Map.Entry<Date, Map<String, Long>> o2) {
-                return o1.getKey().compareTo(o2.getKey());
-            }
-        });
+//        Map<Date, Map<String, Long>> result = attendService.QueryAllDuration(startTime,endTime);
+//        List<Map.Entry<Date, Map<String, Long>>> list = new ArrayList<Map.Entry<Date, Map<String, Long>>>(result.entrySet());
+//        Collections.sort(list, new Comparator<Map.Entry<Date, Map<String, Long>>>() {
+//            //降序排序
+//            @Override
+//            public int compare(Map.Entry<Date, Map<String, Long>> o1, Map.Entry<Date, Map<String, Long>> o2) {
+//                return o1.getKey().compareTo(o2.getKey());
+//            }
+//        });
 
-        System.out.println(data);
-        response.setContentType("application/json;charset=utf-8");
-        PrintWriter writer = response.getWriter();
-        writer.print(data);
-        writer.flush();
-        writer.close();
+        //System.out.println(data);
+        Map<String, String> result = new HashMap<String, String>();
+        result.put("data1", "Yeahhhhhh");
+        object = (JSONObject)JSONObject.toJSON(result);
+        System.out.println(object);
+        //object.put("result", result);
+
+        ResponseJSONUtil.responseJson(response, object);
     }
 }
